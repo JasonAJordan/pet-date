@@ -1,1 +1,11 @@
-<h1> Meetings Page </h1>
+<h1> Dates Page </h1>
+
+
+<% @meetings.each do |meeting| %>
+
+<p> <%= link_to "#{meeting.requester.name} and #{meeting.requestie.name} at #{meeting.location.name}, #{meeting.time} ", meeting_path(meeting) %><br>
+   Status: <%= meeting.status %></p>
+
+<% end %>
+
+<h3> <%= link_to "Create New Date", new_meeting_path %> </h3>

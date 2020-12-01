@@ -1,1 +1,15 @@
 <h1> New location Page </h1>
+
+<ul><% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <li><p><%= error %></p></li>
+  <% end %>
+<% end %>
+</ul>
+
+<%= form_for @location do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.submit %>
+<% end %>

@@ -1,6 +1,6 @@
 class Meeting < ApplicationRecord
 
-    belongs_to :meeting
+    belongs_to :location
 
     belongs_to :requester, class_name: "Pet", foreign_key: :requester_id 
     belongs_to :requestie, class_name: "Pet", foreign_key: :requestie_id 

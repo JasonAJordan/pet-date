@@ -1,15 +1,26 @@
 class MeetingsController < ApplicationController
 
+    def index 
+        @meetings = Meeting.all 
+    end 
+
     def new 
         @meeting = Meeting.new 
+        @requesteds = Pet.all 
+        @requesties = Pet.all 
+        @locations = Location.all 
     end 
 
     def create 
         meeting = Meeting.create(meeting_params)
-
-        redirect_to meeting_path(meeting)
+        if meeting.valid?
+          redirect_to meeting_path(meeting)
+        else
+          flash[:errors] = meeting.errors.full_messages
+          redirect_to new_meeting_path
+        end
+        
     end 
-
 
     def edit 
         @meeting = Meeting.find(params[:id])
@@ -22,7 +33,7 @@ class MeetingsController < ApplicationController
         if @meeting.valid? 
             redirect_to meeting_path(@meeting)
         else 
-            flash[:my_errors] = @meeting.errors.full_messages
+            flash[:errors] = @meeting.errors.full_messages
             redirect_to edit_meeting_path
         end 
     end 
@@ -38,7 +49,7 @@ class MeetingsController < ApplicationController
     private 
 
     def meeting_params 
-        params.require(:meeting).permit(:time, :status, :requester_id, :requestie_id)
+        params.require(:meeting).permit(:time, :status, :requester_id, :requestie_id, :location_id)
     end 
 
 end

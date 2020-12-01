@@ -1,1 +1,7 @@
 <h1> This is the location index </h1>
+
+<ul><% @locations.each do |location| %>
+<li><%= link_to location.name, location_path(location) %></li>
+<% end %>
+
+<h3> <%= link_to "Create New Location", new_location_path %> </h3>

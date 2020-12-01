@@ -1,1 +1,12 @@
 <h1> User Page </h1>
+
+<h3><%= @user.name %> </h3>
+
+<p> <%= @user.bio %> </p>
+
+<h3><u>My Pets </u></h3>
+
+<ul><% @user.pets.each do |pet| %> 
+    <li><%= pet.name %> </li>
+    <% end %> 
+</ul>

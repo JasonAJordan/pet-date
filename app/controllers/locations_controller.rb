@@ -19,10 +19,10 @@ class LocationsController < ApplicationController
     def create 
         location = Location.create(location_params)
 
-        if Location.valid?
+        if location.valid?
           redirect_to location_path(location)
         else
-          flash[:my_errors] = location.errors.full_messages
+          flash[:errors] = location.errors.full_messages
           redirect_to new_location_path
         end
     end
@@ -47,6 +47,6 @@ class LocationsController < ApplicationController
     private
 
     def location_params 
-        params.permit(:location).require(:name)
+        params.require(:location).permit(:name)
     end
 end

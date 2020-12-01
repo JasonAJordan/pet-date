@@ -6,6 +6,7 @@ class PetsController < ApplicationController
     
     def new
       @pet = Pet.new
+      @users = User.all
     end
     
     def create
@@ -14,7 +15,7 @@ class PetsController < ApplicationController
       if pet.valid?
         redirect_to pet_path(pet)
       else
-        flash[:my_errors] = pet.errors.full_messages
+        flash[:errors] = pet.errors.full_messages
         redirect_to new_pet_path
       end
          
@@ -37,7 +38,7 @@ class PetsController < ApplicationController
       if @pet.valid?
       redirect_to pet_path(@pet)
       else 
-      flash[:my_errors] = @pet.errors.full_messages
+      flash[:errors] = @pet.errors.full_messages
       redirect_to edit_pet_path
       end 
     end 
@@ -53,7 +54,7 @@ class PetsController < ApplicationController
     private
 
     def pet_params
-        params.require(:pet).permit(:name, :age, :bio)
+        params.require(:pet).permit(:name, :age, :bio, :user_id)
     end
     
 end
