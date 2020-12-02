@@ -1,8 +1,20 @@
 <h1> Pets Page </h1>
 
+<label> List of Your Pets </label>
 <% @pets.each do |pet| %>
 
-<p> <%= link_to pet.name, pet_path(pet) %></p>
+<% if pet.user_id == @current_user.id %>
+    <p> <%= link_to pet.name, pet_path(pet) %></p>
+    <% end %>
 <% end %>
 
 <h3> <%= link_to "New Pet", new_pet_path %> </h3>
+
+<br><br><br><br><br>
+<p> REMOVE WHOLE LIST BEFORE TUESDAY </p>
+<% @pets.each do |pet| %>
+    <p> <%= link_to pet.name, pet_path(pet) %></p>
+    
+<% end %>
+<p></p> NEEDS TO BE DELETED BEFORE FINAL </p>
+

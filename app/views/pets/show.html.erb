@@ -1,8 +1,8 @@
 <h1> Pet Page </h1>
 
-<h3><%= @pet.name %> </h3>
+<h3>Pet name: <%= @pet.name %> </h3>
 
-<p> <%= @pet.bio %> </p>
+<p> Pet Bio: <%= @pet.bio %> </p>
 
 <p><b>Age:</b> <%= @pet.age %></p>
 
@@ -18,34 +18,27 @@
     <%= meeting.requestie.name %> at 
     <%= meeting.location.name %>, 
     <%= meeting.time %> Status = 
-    <% if (meeting.status == "1") %>
-         <%= "Accepeted"%>
-      <% else %>
-         <%= "Pending" %>
-      <% end %>
+    <%= meeting.status %> 
    </li>
    
-   <%= form_for meeting do |f|%>
-      <%= f.hidden_field :status, value: meeting.accept %>
-      <%= f.submit "Accept the meeting!" %>
+   <% if meeting.status == "Requested" %>
+      <%= form_for meeting do |f|%>
+         <%= f.hidden_field :status, value: meeting.accept %>
+         <%= f.submit "Accept the meeting!" %>
+         <% end %>
       <% end %>
    <% end %>
 </ul>
 <% end %>
 
 <% if @pet.requested_relationships.length %>
-<label> Confirmed Meetings </label>
+<label> Confirmed Meetings: </label>
 <p> <% @pet.requested_relationships.each do |meeting| %>
   
    <%= meeting.requestie.name %> at 
     <%= meeting.location.name %>, 
     <%= meeting.time %> Status = 
-    <% if (meeting.status == "1") %>
-         <%= "Accepeted"%>
-      <% else %>
-         <%= "Pending" %>
-      <% end %>
-   </li>
+   <%= meeting.status %> 
  
    <% end %>
 </p>

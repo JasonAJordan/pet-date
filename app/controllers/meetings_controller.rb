@@ -55,6 +55,7 @@ class MeetingsController < ApplicationController
     private 
 
     def meeting_params 
+        params[:status] = 'Requested'
         params.require(:meeting).permit(:time, :status, :requester_id, :requestie_id, :location_id)
     end 
 

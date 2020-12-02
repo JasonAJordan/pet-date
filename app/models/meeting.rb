@@ -10,7 +10,7 @@ class Meeting < ApplicationRecord
 
 
     def accept 
-        self.status = 1
+        self.status = "Accepted"
     end 
 
 end
