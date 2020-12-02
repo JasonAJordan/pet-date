@@ -7,7 +7,7 @@
   <%# <%= f.label :status 
   <%= f.select :status, [ 'Requested', 'Accepted' ], :prompt => 'Select One' %>
   <% r = 'Requested'%>
-  <% f.hidden_field :status, value: r %> <br><br> 
+  <% f.hidden_field :status, string: 'Requested' %> <br><br> 
 
   <%= f.label :requestie_id %>
   <%= f.collection_select :requestie_id, @requesties, :id, :name  %><br><br>

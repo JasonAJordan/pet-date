@@ -4,10 +4,54 @@
 
 <p> <%= @pet.bio %> </p>
 
-<p> <%= @pet.age %> </p>
+<p><b>Age:</b> <%= @pet.age %></p>
 
-<p> <%= @pet.user.name %> </p>
+<p><b>Owner:</b> <%= @pet.user.name %></p>
 
+<br><br>
+
+<% if @pet.requestie_relationships.length > 0 %>
+<label> Meeting Requests: </label>
+<ul> <% @pet.requestie_relationships.each do |meeting| %>
+  
+   <li><%= meeting.requester.name %> and 
+    <%= meeting.requestie.name %> at 
+    <%= meeting.location.name %>, 
+    <%= meeting.time %> Status = 
+    <% if (meeting.status == "1") %>
+         <%= "Accepeted"%>
+      <% else %>
+         <%= "Pending" %>
+      <% end %>
+   </li>
+   
+   <%= form_for meeting do |f|%>
+      <%= f.hidden_field :status, value: meeting.accept %>
+      <%= f.submit "Accept the meeting!" %>
+      <% end %>
+   <% end %>
+</ul>
+<% end %>
+
+<% if @pet.requested_relationships.length %>
+<label> Confirmed Meetings </label>
+<p> <% @pet.requested_relationships.each do |meeting| %>
+  
+   <%= meeting.requestie.name %> at 
+    <%= meeting.location.name %>, 
+    <%= meeting.time %> Status = 
+    <% if (meeting.status == "1") %>
+         <%= "Accepeted"%>
+      <% else %>
+         <%= "Pending" %>
+      <% end %>
+   </li>
+ 
+   <% end %>
+</p>
+<% end %>
+
+<br><br><br><br>
 <p> 
    Your view count is: <%= cookies[:view_count] %><br>
    This is a cookie test!
