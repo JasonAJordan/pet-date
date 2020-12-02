@@ -1,24 +1,19 @@
-<% if flash[:errors] %>
-  <ul>
-  <% flash[:errors].each do |error| %>
-    <li><%= error %></li>
-  <% end %>
-  </ul>
-<% end %>
+<%= render 'shared/errors' %>
 
 <%= form_for @meeting do |f| %>
   <%= f.label :time %>
   <%= f.datetime_select :time, default: {hour: 9, min: 0} %>
-<br><br>
 
-  <%= f.label :status %>
-  <%= f.select :status, [ 'Requested', 'Accepted' ], :prompt => 'Select One' %><br><br>
-
-  <%= f.label :requester_id %>
-  <%= f.collection_select :requester_id, @requesteds, :id, :name  %><br><br>
+  <%# <%= f.label :status 
+  <%= f.select :status, [ 'Requested', 'Accepted' ], :prompt => 'Select One' %>
+  <% r = 'Requested'%>
+  <% f.hidden_field :status, value: r %> <br><br> 
 
   <%= f.label :requestie_id %>
   <%= f.collection_select :requestie_id, @requesties, :id, :name  %><br><br>
+  
+  <%= f.label :requester_id %>
+  <%= f.collection_select :requester_id, @requesteds, :id, :name  %><br><br>
 
  <%= f.label :location_id %>
   <%= f.collection_select :location_id, @locations, :id, :name  %><br><br>

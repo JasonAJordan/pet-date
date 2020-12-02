@@ -1,6 +1,10 @@
 <h1> Date Show Page </h1>
 
+<p><%= @meeting.requester.name %> and 
+    <%= @meeting.requestie.name %> at 
+    <%= @meeting.location.name %>, 
+    <%= @meeting.time %>
 
+</p>
 
-
-<%= button_to "Delete Date", @meeting, :method => :delete %>
+ <%= button_to "Delete Date", @meeting, :method => :delete %>

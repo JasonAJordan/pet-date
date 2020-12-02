@@ -1,8 +1,4 @@
-<%  if flash[:errors] %>
-<% flash[:errors].each do |error| %>
-<%= error %>
-<% end %>
-<% end %>
+<%= render 'shared/errors' %>
 
 <%= form_for @user do |f| %>
 

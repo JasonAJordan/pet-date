@@ -6,10 +6,14 @@ class MeetingsController < ApplicationController
         @meetings = Meeting.all 
     end 
 
+    def show 
+        @meeting = Meeting.find(params[:id])
+    end 
+
     def new 
         @meeting = Meeting.new 
-        @requesteds = Pet.all 
-        @requesties = Pet.all 
+        @requesteds = (Pet.all - @current_user.pets) 
+        @requesties = @current_user.pets  
         @locations = Location.all 
     end 
 
