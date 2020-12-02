@@ -1,0 +1,16 @@
+<ul><% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <li><p><%= error %></p></li>
+  <% end %>
+<% end %>
+</ul>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.label :bio %>
+  <%= f.text_field :bio %><br><br>
+
+  <%= f.submit %>
+<% end %>

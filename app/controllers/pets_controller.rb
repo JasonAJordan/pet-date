@@ -24,6 +24,11 @@ class PetsController < ApplicationController
     def show 
       @pet = Pet.find(params[:id])
 
+      if cookies[:view_count]
+        cookies[:view_count] = cookies[:view_count].to_i + 1 
+      else 
+        cookies[:view_count] = 1 
+      end 
     end 
       
     def edit 
