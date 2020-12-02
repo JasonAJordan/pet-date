@@ -10,6 +10,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <img src="https://i.pinimg.com/originals/30/7d/4d/307d4d03ef660e147a9d79637d11ee28.jpg">
+    
+    <h1>Pet Date </h1>
+
+    <ul class="nav">
+      <li><%= link_to "Pets", pets_path %></li>
+      <li><%= link_to "Create A Pet", new_pet_path %></li>
+      <li><%= link_to "Create a date", new_meeting_path %></li>
+
+      <% if @current_user %>
+        <%= link_to "logout", logout_path, method: :delete  %></li>
+        <li> Welcome <%= @current_user.name  %></li>
+      <%  else %>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li><%= link_to "Login", new_login_path %></li>
+      <%  end %>
+    </ul>
+
+    <%#  <div class="container"> %>
+      <%= yield %>
+    </div>
   </body>
 </html>

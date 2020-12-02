@@ -1,5 +1,7 @@
 class PetsController < ApplicationController
 
+  skip_before_action :authorized, only: [:new, :create ]
+
     def index 
         @pets = Pet.all
     end 

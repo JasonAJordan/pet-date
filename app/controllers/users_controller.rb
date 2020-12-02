@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  skip_before_action :authorized, only: [:new, :create, :index]
+
     def index 
         @users = User.all
     end 
@@ -12,7 +14,8 @@ class UsersController < ApplicationController
       user = User.create(user_params)
 
       if user.valid?
-        redirect_to user_path(user)
+        cookies[:user_id] = user.id
+        redirect_to users_path
       else
         flash[:errors] = user.errors.full_messages
         redirect_to new_user_path
@@ -35,6 +38,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
       
       if @user.valid?
+      cookies[:user_id] = user.id # might not need this line
       redirect_to user_path(@user)
       else 
       flash[:errors] = @user.errors.full_messages
@@ -53,7 +57,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :bio)
+        params.require(:user).permit(:name, :bio, :password, :user_name)
     end
     
 end

@@ -1,5 +1,7 @@
 class MeetingsController < ApplicationController
 
+    #skip_before_action :authorized, only: [:new, :create ]
+
     def index 
         @meetings = Meeting.all 
     end 
