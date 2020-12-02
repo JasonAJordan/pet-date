@@ -3,7 +3,8 @@ class PetsController < ApplicationController
   skip_before_action :authorized, only: [:new, :create ]
 
     def index 
-        @pets = Pet.all
+        @pets = Pet.all.with_attached_pictures
+           # might not need attached images bit 
     end 
     
     def new
@@ -13,6 +14,8 @@ class PetsController < ApplicationController
     
     def create
       pet = Pet.create(pet_params)
+      pet.pictures.attach(params[:pet][:pictures])
+         # might not need attached images bit 
 
       if pet.valid?
         redirect_to pet_path(pet)
@@ -61,7 +64,7 @@ class PetsController < ApplicationController
     private
 
     def pet_params
-        params.require(:pet).permit(:name, :age, :bio, :user_id)
+        params.require(:pet).permit(:name, :age, :bio, :user_id, pictures: [])
     end
     
 end

@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   skip_before_action :authorized, only: [:new, :create, :index]
 
     def index 
-        @users = User.all
+        @users = User.all.with_attached_pictures
+        # might not need attached images bit 
     end 
     
     def new
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
     
     def create
       user = User.create(user_params)
-
+      user.pictures.attach(params[:user][:pictures])
       if user.valid?
         cookies[:user_id] = user.id
         redirect_to users_path
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
       
       if @user.valid?
-      cookies[:user_id] = user.id # might not need this line
+      # cookies[:user_id] = @user.id # might not need this line
       redirect_to user_path(@user)
       else 
       flash[:errors] = @user.errors.full_messages
@@ -57,7 +58,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :bio, :password, :user_name)
+        params.require(:user).permit(:name, :bio, :password, :user_name, pictures: [])
     end
     
 end

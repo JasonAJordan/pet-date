@@ -8,6 +8,15 @@
 
 <p><b>Owner:</b> <%= @pet.user.name %></p>
 
+<ul>
+
+ <% if @pet.pictures.attached? %>
+   
+   <% @pet.pictures.each do |picture| %>
+    <li><img src="<%=(url_for(picture))%>"></li>
+    <% end %>
+    <% end %>
+</ul>
 <br><br>
 
 <% if @pet.requestie_relationships.length > 0 %>

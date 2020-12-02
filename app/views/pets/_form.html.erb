@@ -10,6 +10,9 @@
   <%= f.label :age %>
   <%= f.select :age, (1..100) %><br><br>
 
+  <%= f.label "Profile Photo" %>
+  <%= f.file_field :pictures, multiple: true  %><br><br>
+
   <%# <%= f.label :user_id 
   <%= f.collection_select :user_id, @users, :id, :name, prompt:true %> 
 
