@@ -12,11 +12,9 @@
    
    <% @user.pictures.each do |picture| %>
    <% variant = picture.variant(resize_to_limit: [300, 300]).processed %>
-    <li><img src="<%=(url_for(variant))%>"></li>
-    
-    <%#.variant(resize_to_limit: [100, 100])%>
+        <li><img src="<%=(url_for(variant))%>"></li>
     <% end %>
-    <% end %>
+  <% end %>
 </ul>
 
 <h3><u>My Pets </u></h3>

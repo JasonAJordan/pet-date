@@ -13,4 +13,20 @@ class Meeting < ApplicationRecord
         self.status = "Accepted"
     end 
 
+    def current_date 
+        time1 = Time.new.utc
+    end 
+
+    def has_passed
+        if self.time < self.current_date
+            return "I hope you had fun"
+        else 
+            return "Your date is soon!" 
+        end 
+    end 
+
+    def time_nice 
+        time.strftime("%A, %m/%d/%Y at  %I:%M%p")
+    end 
+
 end

@@ -8,12 +8,14 @@
 
 <p><b>Owner:</b> <%= @pet.user.name %></p>
 
+
 <ul>
 
  <% if @pet.pictures.attached? %>
    
    <% @pet.pictures.each do |picture| %>
-    <li><img src="<%=(url_for(picture))%>"></li>
+   <% variant = picture.variant(resize_to_limit: [300, 300]).processed %>
+    <li><img src="<%=(url_for(variant))%>"></li>
     <% end %>
     <% end %>
 </ul>
@@ -23,10 +25,11 @@
 <label> Meeting Requests: </label>
 <ul> <% @pet.requestie_relationships.each do |meeting| %>
   
-   <li><%= meeting.requester.name %> and 
+   <li><%= link_to 'Meeting:', meeting_path(meeting) %>
+   <%= meeting.requester.name %> and 
     <%= meeting.requestie.name %> at 
     <%= meeting.location.name %>, 
-    <%= meeting.time %> Status = 
+    <%= meeting.time_nice %> Status = 
     <%= meeting.status %> 
    </li>
    
@@ -44,14 +47,21 @@
 <label> Confirmed Meetings: </label>
 <p> <% @pet.requested_relationships.each do |meeting| %>
   
+   <li><%= link_to 'Meeting:', meeting_path(meeting) %>
    <%= meeting.requestie.name %> at 
     <%= meeting.location.name %>, 
-    <%= meeting.time %> Status = 
+    <%= meeting.time_nice %> Status = 
    <%= meeting.status %> 
+   </li>
  
    <% end %>
 </p>
 <% end %>
+
+
+<%# render 'meetings/form' %>
+
+
 
 <br><br><br><br>
 <p> 

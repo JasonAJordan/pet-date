@@ -1,13 +1,37 @@
 <h1> Date Show Page </h1>
 
-<p> <%= @meeting.status %> 
+<p> <%= @meeting.status %>: 
     <%= @meeting.requester.name %> and 
     <%= @meeting.requestie.name %> at 
-    <%= @meeting.location.name %>, 
-    <%= @meeting.time %>
+    <%= @meeting.location.name %>: 
+    <%= @meeting.time_nice %>
     
-
+    <%# @meeting.current_date %>
 </p>
+
+
+<p> <%= @meeting.has_passed %> </p>
+   
+
+<label> <h3>Your Buddy </h3></label> 
+<% if @meeting.requestie.pictures.attached? %>
+   
+   <% pic = @meeting.requestie.pictures.first  %>
+   <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
+    <img src="<%=(url_for(variant))%>">
+    <% else %><br>
+        <%= "No Image 😢"%>
+<% end %><br>
+
+<label><h3> Their New Buddy</h3> </label> 
+<% if @meeting.requester.pictures.attached? %>
+   
+   <% pic = @meeting.requester.pictures.first  %>
+   <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
+    <img src="<%=(url_for(variant))%>">
+    <% else %><br>
+    <%= "No Image 😢"%>
+<% end %>
 
 <h3> <%= link_to "Back to all meetings", meetings_path %> </h3>
 <h3> <%= link_to "Back to User", user_path(@current_user) %> </h3>

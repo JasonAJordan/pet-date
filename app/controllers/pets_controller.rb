@@ -28,6 +28,8 @@ class PetsController < ApplicationController
       
     def show 
       @pet = Pet.find(params[:id])
+      @meeting = Meeting.new
+
 
       if cookies[:view_count]
         cookies[:view_count] = cookies[:view_count].to_i + 1 
