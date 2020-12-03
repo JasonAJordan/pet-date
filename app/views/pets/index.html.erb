@@ -1,15 +1,24 @@
 <h1> Pets Page </h1>
 
-<label> List of Your Pets </label>
+<label> List of Your Pets: </label>
 <% @pets.each do |pet| %>
 
-<% if pet.user_id == @current_user.id %>
-    <p> <%= link_to pet.name, pet_path(pet) %></p>
+    <% if pet.user_id == @current_user.id %>
+        <p> <%= link_to pet.name, pet_path(pet) %></p>
+
+        <% if pet.pictures.attached? %>
+   
+            <% pic = pet.pictures.first  %>
+            <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
+            <img src="<%=(url_for(variant))%>">
+        <% else %><br>
+            <%= "No Image 😢"%>
+        <% end %><br>
     <% end %>
 <% end %>
 
 <br><br><br><br><br>
-<p> REMOVE WHOLE LIST BEFORE TUESDAY </p>
+<p> REMOVE DEV LIST BEFORE TUESDAY </p>
 <% @pets.each do |pet| %>
     <p> <%= link_to pet.name, pet_path(pet) %></p>
     
