@@ -31,6 +31,8 @@ class PetsController < ApplicationController
       @pet = Pet.find(params[:id])
       @meeting = Meeting.new
       @locations = Location.all 
+      @requestieorder = @pet.requestie_relationships.order('status DESC')
+      @requesterorder = @pet.requested_relationships.order('status DESC')
 
       cookies[:last_viewed_pet] = @pet.id
       
