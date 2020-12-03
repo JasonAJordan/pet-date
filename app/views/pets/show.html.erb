@@ -21,10 +21,35 @@
 </ul>
 <br><br>
 
-<% if @pet.requestie_relationships.length > 0 %>
-<label> Meeting Requests: </label>
-<ul> <% @pet.requestie_relationships.each do |meeting| %>
-  
+<% if @requestieorder.length > 0 %>
+   <label> Pending Requests: </label>
+   <ul> <% @requestieorder.each do |meeting| %>
+
+      <% if meeting.status != 'Accepted'%>
+         <li><%= link_to 'Meeting:', meeting_path(meeting) %>
+         <%= meeting.requester.name %> and 
+         <%= meeting.requestie.name %> at 
+         <%= meeting.location.name %>, 
+         <%= meeting.time_nice %> Status = 
+         <%= meeting.status %> 
+         </li>
+      <% end %>
+   
+      <% if meeting.status != "Accepted" %>
+         <%= form_for meeting do |f|%>
+            <%= f.hidden_field :status, value: meeting.accept %>
+            <%= f.submit "Accept the meeting!" %>
+         <% end %>
+      <% end %>   
+   <% end %>
+</ul>
+<% end %> <br>
+
+
+<% if @requesterorder.length > 0 %>
+<label> Accepted Requests: </label>
+<ul> <% @requesterorder.each do |meeting| %>
+  <% if meeting.status == 'Accepted'%>
    <li><%= link_to 'Meeting:', meeting_path(meeting) %>
    <%= meeting.requester.name %> and 
     <%= meeting.requestie.name %> at 
@@ -32,34 +57,14 @@
     <%= meeting.time_nice %> Status = 
     <%= meeting.status %> 
    </li>
-   
-   <% if meeting.status != "Accepted" %>
-      <%= form_for meeting do |f|%>
-         <%= f.hidden_field :status, value: meeting.accept %>
-         <%= f.submit "Accept the meeting!" %>
-         <% end %>
-      <% end %>
+   <% end %>
    <% end %>
 </ul>
 <% end %>
 
-<% if @pet.requested_relationships.length %>
-<label> Confirmed Meetings: </label>
-<p> <% @pet.requested_relationships.each do |meeting| %>
-  
-   <li><%= link_to 'Meeting:', meeting_path(meeting) %>
-   <%= meeting.requestie.name %> at 
-    <%= meeting.location.name %>, 
-    <%= meeting.time_nice %> Status = 
-   <%= meeting.status %> 
-   </li>
- 
-   <% end %>
-</p>
-<% end %>
-
-
 <%# render 'meetings/form' %>
+<%# THIS IS THE DATE FORM %>
+
 <br><br><br>
 <% if @pet.user.id != @current_user.id %>
    <%= form_tag meetings_path do %>
@@ -83,6 +88,7 @@
 <% end %>
 
 <br><br><br><br>
+
 <p> 
    Your view count is: <%= cookies[:view_count] %><br>
    This is a cookie test!

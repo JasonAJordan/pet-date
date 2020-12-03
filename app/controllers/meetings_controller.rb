@@ -3,11 +3,11 @@ class MeetingsController < ApplicationController
     #skip_before_action :authorized, only: [:new, :create ]
 
     def index 
-        @meetings = Meeting.all 
+        @meetings = Meeting.all.order('status DESC')
     end 
 
     def show 
-        @meeting = Meeting.find(params[:id])
+        @meeting = Meeting.find(params[:id]).order('status DESC')
     end
 
     def new 
