@@ -17,5 +17,14 @@
 
  body {
 
-    background-color: rgba(1, 80, 113, 0.5);
+    background-color: rgba(53, 207, 99, 0.7);
+ }
+
+
+ /* --- Background --- */ 
+
+ .container { 
+
+    /* background-color: rgba(62, 7, 79, 0.2); */
+    background-color: rgba(53, 197, 207, 0.7)
  }
