@@ -10,31 +10,39 @@
   </head>
 
   <body>
-    <img src="https://i.pinimg.com/originals/30/7d/4d/307d4d03ef660e147a9d79637d11ee28.jpg">
-    
+
+    <div class="banner">
+    <%# <img src="https://i.pinimg.com/originals/30/7d/4d/307d4d03ef660e147a9d79637d11ee28.jpg"> %>
+
     <h1>Pet Playdate </h1>
+    <h3> A Place for Pets </h3>
+    </div>
 
     <ul class="nav">
+      <%# <div class ="left"> %>
       <li><%= link_to "My Pets", pets_path %></li>
       <li><%= link_to "Create A Pet", new_pet_path %></li>
       <li><%= link_to "Create a date", new_meeting_path %></li>
             <%#<><%= link_to "Browse Pets", browse_pets_path %>
+      <%# </div> %>
 
-
-
-
+      <%# <div class="right"> %>
       <% if @current_user %>
-              <li><%= link_to "Edit Profile", edit_user_path(@current_user) %></li>
-              <%= link_to "Logout", logout_path, method: :delete  %></li>
-        <li> Welcome <%= @current_user.name  %></li>
+          <li class="right"><%= link_to "Logout", logout_path, method: :delete  %></li>
+          <li class="right"><%= link_to "Edit Profile", edit_user_path(@current_user) %></li>
+              <li class="right"> Welcome <%= @current_user.name  %></li>
+
       <%  else %>
-        <li><%= link_to "Sign Up", new_user_path %></li>
-        <li><%= link_to "Login", new_login_path %></li>
+        <li class="right"><%= link_to "Sign Up", new_user_path %></li>
+        <li class="right"><%= link_to "Login", new_login_path %></li>
       <%  end %>
+      <%# </div> %>
     </ul>
 
     <%#  <div class="container"> %>
       <%= yield %>
     </div>
+
+    <p class="footer"> Est. 2020 </p>
   </body>
 </html>

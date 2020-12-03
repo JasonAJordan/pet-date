@@ -9,16 +9,16 @@
 <p><b>Owner:</b> <%= @pet.user.name %></p>
 
 
-<ul>
 
  <% if @pet.pictures.attached? %>
    
    <% @pet.pictures.each do |picture| %>
    <% variant = picture.variant(resize_to_limit: [300, 300]).processed %>
-    <li><img src="<%=(url_for(variant))%>"></li>
+    <img src="<%=(url_for(variant))%>">
+    <p>checking this loop</p>
     <% end %>
+   
     <% end %>
-</ul>
 <br><br>
 
 <% if @requestieorder.length > 0 %>
