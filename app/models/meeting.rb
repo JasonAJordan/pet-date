@@ -18,15 +18,23 @@ class Meeting < ApplicationRecord
     end 
 
     def has_passed
-        if self.time < self.current_date
-            return "I hope you had fun"
+        if self.time 
+            if self.time < self.current_date
+                return "I hope you had fun"
+            else 
+                return "Your date is soon!" 
+            end
         else 
-            return "Your date is soon!" 
-        end 
+            "Something went wrong"
+        end
     end 
 
     def time_nice 
-        time.strftime("%A, %m/%d/%Y at  %I:%M%p")
+        if self.time 
+            time.strftime("%A, %m/%d/%Y at  %I:%M%p")
+        else 
+            "Something went wrong"
+        end
     end 
 
 end
