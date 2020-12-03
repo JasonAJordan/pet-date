@@ -15,6 +15,21 @@
  */
 
 
+ .nav {
+    background-color: rgba(250, 253, 55, 0.8);
+    height: 30px;
+    width: 90%;
+    margin: 0px auto;
+    padding: 0px;
+  }
+  
+   .nav li {
+     display: inline-block;
+     line-height: 30px;
+     padding: 0px 15px;
+     margin: 0px;
+  
+   }
  body {
 
     background-color: rgba(53, 207, 99, 0.7);
