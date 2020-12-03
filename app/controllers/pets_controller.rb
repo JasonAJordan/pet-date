@@ -5,6 +5,7 @@ class PetsController < ApplicationController
     def index 
         @pets = Pet.all.with_attached_pictures
            # might not need attached images bit 
+           @locations = Location.all 
     end 
     
     def new
@@ -29,8 +30,10 @@ class PetsController < ApplicationController
     def show 
       @pet = Pet.find(params[:id])
       @meeting = Meeting.new
+      @locations = Location.all 
 
-
+      cookies[:last_viewed_pet] = @pet.id
+      
       if cookies[:view_count]
         cookies[:view_count] = cookies[:view_count].to_i + 1 
       else 

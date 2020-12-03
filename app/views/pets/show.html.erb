@@ -70,12 +70,13 @@
    <label> My Pets: </label>
    <%= collection_select(:meeting, :requestie_id, @current_user.pets , :id, :name ) %><br><br>
    
-   <label> Other Pets: </label>
-   <%# hidden_field(:meeting, :requester_id, :value => @pet.id ) %>
-   <%= collection_select(:meeting, :requester_id, (Pet.all - @current_user.pets), :id, :name ) %><br><br>
+   <%# <label> Other Pets: </label> %>
+   <%= hidden_field(:meeting, :requester_id, :value => cookies[:last_viewed_pet] ) %>
+   <%# collection_select(:meeting, :requester_id, (Pet.all - @current_user.pets), :id, :name ) %><br><br>
+   <%= hidden_field(:meeting, :status, :value => 'Requested' ) %>
 
    <label> Place: </label>
-   <%= collection_select(:meeting, :location_id, Location.all, :id, :name ) %><br><br>
+   <%= collection_select(:meeting, :location_id, @locations, :id, :name ) %><br><br>
 
    <%= submit_tag "Make Request"%>
    <% end %>

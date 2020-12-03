@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "/sessions/new", to: 'sessions#new', as: 'new_login' 
   post '/sessions/login', to: 'sessions#login', as: 'login'
 
+  
 end
