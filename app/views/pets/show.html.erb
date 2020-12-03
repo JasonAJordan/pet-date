@@ -1,24 +1,22 @@
 <h1> Pet Page </h1>
 
-<h3>Pet name: <%= @pet.name %> </h3>
-
-<p> Pet Bio: <%= @pet.bio %> </p>
-
-<p><b>Age:</b> <%= @pet.age %></p>
-
-<p><b>Owner:</b> <%= @pet.user.name %></p>
-
+<div class="show-container">
+<div class=show-title>
+   <p> Pet name: <%= @pet.name %> </p>
+   <p> Pet Bio: <%= @pet.bio %> </p>
+   <p><b>Age:</b> <%= @pet.age %></p>
+   <p><b>Owner:</b> <%= link_to @pet.user.name, user_path(@pet.user) %></p>
 
 
- <% if @pet.pictures.attached? %>
-   
-   <% @pet.pictures.each do |picture| %>
-   <% variant = picture.variant(resize_to_limit: [300, 300]).processed %>
-    <img src="<%=(url_for(variant))%>">
-    <p>checking this loop</p>
-    <% end %>
-   
-    <% end %>
+   <% if @pet.picture.attached? %>
+      
+      <% variant = @pet.picture.variant(resize_to_limit: [300, 300]).processed %>
+      <img src="<%=(url_for(variant))%>">
+
+   <% end %>
+</div>
+</div>
+
 <br><br>
 
 <% if @requestieorder.length > 0 %>

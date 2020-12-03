@@ -14,9 +14,9 @@
    
 
 <label> <h3>Your Buddy </h3></label> 
-<% if @meeting.requestie.pictures.attached? %>
+<% if @meeting.requestie.picture.attached? %>
    
-   <% pic = @meeting.requestie.pictures.first  %>
+   <% pic = @meeting.requestie.picture  %>
    <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
     <img src="<%=(url_for(variant))%>">
     <% else %><br>
@@ -24,9 +24,9 @@
 <% end %><br>
 
 <label><h3> Their New Buddy</h3> </label> 
-<% if @meeting.requester.pictures.attached? %>
+<% if @meeting.requester.picture.attached? %>
    
-   <% pic = @meeting.requester.pictures.first  %>
+   <% pic = @meeting.requester.picture %>
    <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
     <img src="<%=(url_for(variant))%>">
     <% else %><br>

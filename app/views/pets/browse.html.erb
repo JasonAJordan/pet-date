@@ -1,0 +1,19 @@
+<h1> All Of the Pets </h1>
+
+<% if @pets == [] %>
+
+    <div class="no-pets"><%= "There are no other pets to display."%><br><br> 
+    <%= "Please spread the word and come back soon."%></div>
+<% else %>
+<div class="index-container"> 
+
+    <% @pets.each do |pet| %>
+        <div class='index-title'>
+        <p><%= link_to pet.name, pet_path(pet) %></p>
+        <% variant = pet.picture.variant(resize_to_limit: [300, 300]).processed %>
+        <img src="<%=(url_for(variant))%>">
+        </div>
+    <% end %>
+    
+</div>
+<% end %>

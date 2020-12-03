@@ -2,7 +2,10 @@
 
 <%= form_for @meeting do |f| %>
   <%= f.label :time %>
-  <%= f.datetime_select :time, default: {hour: 9, min: 0} %><br><br>
+  
+  <%= f.datetime_select :time, :default => 0.days.from_now.in_time_zone("America/New_York") %><br><br>
+  <%# <%= f.datetime_select :time, default: {hour: 9, min: 0} %>
+  <%# f.datetime_select(:req_sess_start, :start_year => 2010, :ampm => true, :default => 0.days.from_now.in_time_zone(@timezone)) %>
 
   <%= f.label "My Pets" %>
   <%= f.collection_select :requestie_id, @requesties, :id, :name  %><br><br>

@@ -7,7 +7,8 @@ class MeetingsController < ApplicationController
     end 
 
     def show 
-        @meeting = Meeting.find(params[:id]).order('status DESC')
+        @meeting = Meeting.find(params[:id])
+        # .order('status DESC')
     end
 
     def new 

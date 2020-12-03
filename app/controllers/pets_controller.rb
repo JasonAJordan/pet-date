@@ -3,7 +3,7 @@ class PetsController < ApplicationController
   skip_before_action :authorized, only: [:new, :create ]
 
     def index 
-        @pets = Pet.all.with_attached_pictures
+        @pets = Pet.all.with_attached_picture
            # might not need attached images bit 
            @locations = Location.all 
     end 
@@ -15,7 +15,7 @@ class PetsController < ApplicationController
     
     def create
       pet = Pet.create(pet_params)
-      pet.pictures.attach(params[:pet][:pictures])
+      pet.picture.attach(params[:pet][:picture])
          # might not need attached images bit 
 
       if pet.valid?
@@ -43,6 +43,10 @@ class PetsController < ApplicationController
       end 
     end 
       
+    def browse 
+      @pets = (Pet.all - @current_user.pets)
+    end 
+
     def edit 
       @pet = Pet.find(params[:id])  
 
@@ -71,7 +75,7 @@ class PetsController < ApplicationController
     private
 
     def pet_params
-        params.require(:pet).permit(:name, :age, :bio, :user_id, pictures: [])
+        params.require(:pet).permit(:name, :age, :bio, :user_id, :picture)
     end
     
 end
