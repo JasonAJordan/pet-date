@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :location 
       t.string :hobbies 
       t.string :favorite 
+      t.string :email 
 
       t.string :password_digest
       t.timestamps

@@ -32,6 +32,9 @@
       <% if @current_user %>
           <li class="right"><%= link_to "Logout", logout_path, method: :delete  %></li>
           <li class="right"><%= link_to "Edit Profile", edit_user_path(@current_user) %></li>
+          <%# mailboxer link below %>
+          <li class="right"><%= link_to "Inbox", mailbox_inbox_path %></li>
+
               <li class="right"> <%= link_to "Welcome #{@current_user.name}", user_path(@current_user)%> 
               
       <%  else %>

@@ -58,4 +58,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Mailboxer gem for sendin/reciebving messages 
-# gem 'mailboxer'
+gem 'mailboxer'
