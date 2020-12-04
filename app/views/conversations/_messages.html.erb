@@ -4,7 +4,13 @@
       <div class="media-left">
         <!-- user avators can go here -->
         <a href="#">
-          <img class="media-object" src="http://placehold.it/64x64" alt="...">
+           <!-- <img class="media-object" src="http://placehold.it/64x64" alt="..."> --->
+          
+               <% if @current_user.picture.attached? %>
+   
+          <% variant = @current_user.picture.variant(resize_to_limit: [100, 100]).processed %>
+          <img src="<%=(url_for(variant))%>">
+          <% end %>
         </a>
       </div>
       <div class="media-body">

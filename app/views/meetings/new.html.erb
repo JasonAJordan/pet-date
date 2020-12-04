@@ -2,9 +2,14 @@
 
 <%# <%= render 'otherpetlist'%> 
  
+ <div class="new-container">
 <%= render 'form' %>
+</div>
+
+<div class="index-container" >
 
 <% @requesteds.each do |pet| %>
+    <div class='index-title'>
     <p> <%= link_to pet.name, pet_path(pet) %></p>
 
     <% if pet.picture.attached? %>
@@ -14,6 +19,8 @@
     <img src="<%=(url_for(variant))%>">
     <% else %><br>
         <%= "No Image 😢"%>
-<% end %><br>
-    
+    <% end %><br>
+    </div>
 <% end %>
+
+</div>

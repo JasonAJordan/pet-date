@@ -1,30 +1,43 @@
 <div class="row">
   <div class="spacer"></div>
-  <div class="col-md-12">
+  <br>
+  <div class="ol-md-12">
+
     <!-- we'll configure this to compose new conversations later -->
-    <%= link_to "Compose", new_conversation_path, class: "btn btn-success" %>
+    <!-- <div class="nav"> -->
+    <ul class="nav mail">
+    <li><%= link_to "Compose", new_conversation_path, class: "btn btn-success" %> </li>
+    </ul>
+    <!-- </div> -->
     <div class="spacer"></div>
   </div>
+
+  
 
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <%= render 'mailbox/folders' %>
+      <!-- individual conversations will show here -->
+        <%= render 'mailbox/folders' %> 
+
+          <!--  Delete Above if doesn't work, un comment render tag! -->
       </div>
     </div>
   </div>
-
+<br><br><br><br>
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-body">
+        <div class="mail-container">  <!-- OUR CSS IS HERE ON THIS LINE -->
         <!-- individual conversations will show here -->
-        <% if is_conversation %>
+          <% if is_conversation %>
             <%= render 'conversations/form' %>
             <% else %>
             <!--place holder --->
             <%= render partial: 'conversations/conversation', collection: messages %>
-            <% end %>      
-            </div>
+          <% end %>      
+          </div> <!-- ENDS HERE -->
+        </div>
     </div>
   </div>
 

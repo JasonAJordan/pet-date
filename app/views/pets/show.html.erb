@@ -19,6 +19,11 @@
 
 <br><br>
 
+
+<!-- THIS IS THE DATE ACCEPTED/PENDING -->
+
+<% if @current_user.id == @pet.user.id %>
+
 <% if @requestieorder.length > 0 %>
    <label> Pending Requests: </label>
    <ul> <% @requestieorder.each do |meeting| %>
@@ -43,7 +48,6 @@
 </ul>
 <% end %> <br>
 
-
 <% if @requesterorder.length > 0 %>
 <label> Accepted Requests: </label>
 <ul> <% @requesterorder.each do |meeting| %>
@@ -60,11 +64,16 @@
 </ul>
 <% end %>
 
-<%# render 'meetings/form' %>
-<%# THIS IS THE DATE FORM %>
+<% end %>
+
+
+<!-- THIS IS THE NEW DATE REQUEST PART! -->
 
 <br><br><br>
+
+
 <% if @pet.user.id != @current_user.id %>
+<div class="new-container">
    <%= form_tag meetings_path do %>
 
    <label> Time: </label>
@@ -84,7 +93,9 @@
 
    <%= submit_tag "Make Request"%>
    <% end %>
+   </div>
 <% end %>
+
 
 <br><br><br><br>
 

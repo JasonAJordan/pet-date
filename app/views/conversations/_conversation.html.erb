@@ -1,7 +1,14 @@
 <div class="media">
   <div class="media-left">
     <a href="#">
-      <img class="media-object" src="http://placehold.it/64x64" alt="...">
+      <!-- <img class="media-object" src="http://placehold.it/64x64" alt="..."> -->
+      <!-- Image here -->
+       <% if conversation.originator.picture.attached? %>
+   
+          <% variant = conversation.originator.picture.variant(resize_to_limit: [100, 100]).processed %>
+          <img src="<%=(url_for(variant))%>">
+        <% end %>
+
     </a>
   </div>
   <div class="media-body">

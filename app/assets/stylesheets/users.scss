@@ -2,19 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+img {
+    max-width: 70%;
+    height:auto;
+    align: center; 
+}
 
 h1 { 
     font-family: Arial, Helvetica, sans-serif;
-    color: wheat
+    color: wheat;
+    text-align: center;
 }
 h2 { 
     font-family: Arial, Helvetica, sans-serif;
-    color: wheat
+    color: wheat;
+    text-align: center;
+
 }
 
 h3 { 
     font-family: Arial, Helvetica, sans-serif;
-    color: wheat
+    color: wheat;
+    text-align: center;
+
 }
 label { 
     font-family: Arial, Helvetica, sans-serif;
@@ -22,4 +32,27 @@ label {
 }
 p { 
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+
+}
+
+.home-bio { 
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black; 
+    border-radius: 10px;
+    padding: 10px; 
+    width: 600px; 
+    margin: auto;
+
+}
+
+.home-bio h1 { 
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-size: 40px;
+}
+.home-bio h3 { 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
