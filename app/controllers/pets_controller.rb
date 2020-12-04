@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
 
-  skip_before_action :authorized, only: [:new, :create ]
+  #skip_before_action :authorized, only: [:new, :create ] # do not uncomment this. 
   before_action :user_authorized, only: [:update]
 
   def user_authorized 
@@ -80,7 +80,9 @@ class PetsController < ApplicationController
     private
 
     def pet_params
-        params.require(:pet).permit(:name, :age, :bio, :user_id, :picture)
+        params.require(:pet).permit(:name, :age, :bio, :user_id, :picture, :likes, :dislikes, :species)
     end
     
 end
+
+

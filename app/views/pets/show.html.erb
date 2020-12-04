@@ -2,8 +2,8 @@
 
 <div class="show-container">
 <div class=show-title>
-   <p> Pet name: <%= @pet.name %> </p>
-   <p> Pet Bio: <%= @pet.bio %> </p>
+   <h2></h2>  <%= @pet.name %> </h2>
+   <p> <%= @pet.bio %> </p>
    <p><b>Age:</b> <%= @pet.age %></p>
    <p><b>Owner:</b> <%= link_to @pet.user.name, user_path(@pet.user) %></p>
 

@@ -20,6 +20,7 @@ class LocationsController < ApplicationController
 
     def create 
         location = Location.create(location_params)
+        location.picture.attach(params[:location][:picture])
 
         if location.valid?
           redirect_to location_path(location)
@@ -49,6 +50,6 @@ class LocationsController < ApplicationController
     private
 
     def location_params 
-        params.require(:location).permit(:name)
+        params.require(:location).permit(:name, :picture)
     end
 end

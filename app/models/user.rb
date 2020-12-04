@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
     has_secure_password 
     
-    #validates :picture, presence: true 
+    # validates :picture, presence: true 
     validates :name, presence: true 
     validates :bio, presence: true
 

@@ -1,5 +1,11 @@
 <h1> All of Your Pets </h1>
 
+ <%  if @pets.get_user_pets(@current_user).count == 0 %>
+
+    <div class="no-pets"><%= "You haven't uploaded any of your pets yet."%><br><br> 
+    Please <%= link_to "click here", new_pet_path %> to upload.</div>
+<% else %>
+
 <div class='index-container'>
 <% @pets.each do |pet| %>
 
@@ -17,6 +23,7 @@
             <% end %>
         </div>
     <% end %>
+<% end %>
 <% end %>
 </div> 
 

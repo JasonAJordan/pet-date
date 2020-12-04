@@ -1,3 +1,10 @@
 <h1> This is the location show page </h1>
 
 <h3><%= @location.name %> </h3>
+
+
+ <% if @location.picture.attached? %>
+   
+   <% variant = @location.picture.variant(resize_to_limit: [300, 300]).processed %>
+        <img src="<%=(url_for(variant))%>">
+<% end %>

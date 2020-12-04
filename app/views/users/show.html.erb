@@ -1,12 +1,14 @@
 <h1><%= @user.name %></h1>
-
-<p> <%= @user.bio %> </p>
+<h3> <%= @user.location %></h3>
 
  <% if @user.picture.attached? %>
    
    <% variant = @user.picture.variant(resize_to_limit: [300, 300]).processed %>
         <img src="<%=(url_for(variant))%>">
   <% end %>
+<p> <%= @user.bio %> </p>
+<p> Hobbies: <%= @user.hobbies %> </p>
+<p> Favorite Movie: <%= @user.favorite %> </p>
 
 <h3>My Pets </h3>
 

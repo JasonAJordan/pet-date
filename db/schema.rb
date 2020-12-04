@@ -51,8 +51,11 @@ ActiveRecord::Schema.define(version: 2020_12_02_220105) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
+    t.string "species"
     t.string "bio"
     t.integer "age"
+    t.string "likes"
+    t.string "dislikes"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -62,6 +65,9 @@ ActiveRecord::Schema.define(version: 2020_12_02_220105) do
     t.string "name"
     t.string "bio"
     t.string "user_name"
+    t.string "location"
+    t.string "hobbies"
+    t.string "favorite"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -40,5 +40,9 @@ class Pet < ApplicationRecord
 
     # @requestieorder = @pets.requestie_relationships.order('status DESC')
     # @requesterorder = @pets.requested_relationships.order('status DESC')
+
+    def self.get_user_pets(current_user)
+        Pet.all.select { |pet| pet.user_id == current_user.id }
+    end 
     
-end
+end 
