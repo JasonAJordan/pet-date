@@ -26,6 +26,12 @@ class UsersController < ApplicationController
       
     def show 
       @user = User.find(params[:id])
+      @pets = @user.pets 
+
+
+      # @requestieorder = @pet.requestie_relationships.order('status DESC')
+      # @requesterorder = @pet.requested_relationships.order('status DESC')
+
 
     end 
       

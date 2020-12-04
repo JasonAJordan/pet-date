@@ -3,8 +3,9 @@
 
 <% @meetings.each do |meeting| %>
 
-<p> <%= link_to "#{meeting.requester.name} and #{meeting.requestie.name} at #{meeting.location.name}, #{meeting.time} ", meeting_path(meeting) %><br>
-   Status: <%= meeting.status %></p>
+<p>  <%= link_to "#{meeting.requester.name} and #{meeting.requestie.name} at #{meeting.location.name}", meeting_path(meeting) %><br>
+    <%= "#{meeting.time_nice}" %><br>
+      Status:  <%= meeting.status %> </p>
 
 <% end %>
 

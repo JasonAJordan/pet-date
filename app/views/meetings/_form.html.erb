@@ -13,8 +13,10 @@
   <%= f.label "Other Pets" %>
   <%= f.collection_select :requester_id, @requesteds, :id, :name  %><br><br>
 
- <%= f.label :location_id %>
+  <%= f.label :location_id %>
   <%= f.collection_select :location_id, @locations, :id, :name  %><br><br>
+
+  <%= f.hidden_field :status, value: 'Requested'  %> 
 
   <%= f.submit %>
 <% end %>

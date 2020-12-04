@@ -11,6 +11,12 @@ class Pet < ApplicationRecord
 
     belongs_to :user
 
+    validates :picture, presence: true 
+    validates :name, presence: true 
+    validates :bio, presence: true 
+    validates :age, presence: true 
+
+
     # has_many :followed_users, foreign_key: :follower_id, class_name: 'Follow'
     # has_many :followees, through: :followed_users
     
@@ -22,5 +28,17 @@ class Pet < ApplicationRecord
     
     # has_many :passive_relationships, class_name: "Relationship", foreign_key: :followed_id, dependent: :destroy
     # has_many :followers, through: :passive_relationships, source: :follower
+
+
+    def get_requestie_relationships
+        self.requestie_relationships.order('status DESC')
+    end 
+
+    def get_requested_relationships
+        self.requested_relationships.order('status DESC')
+    end 
+
+    # @requestieorder = @pets.requestie_relationships.order('status DESC')
+    # @requesterorder = @pets.requested_relationships.order('status DESC')
     
 end

@@ -68,11 +68,12 @@
    <%= form_tag meetings_path do %>
 
    <label> Time: </label>
-   <%= datetime_select(:meeting, :time, default: {hour: 9, min: 0}) %><br><br>
+   <%# <%= datetime_select(:meeting, :time, default: {hour: 9, min: 0}) %>
+   <%= datetime_select(:meeting, :time, :default => 0.days.from_now.in_time_zone("America/New_York")) %><br><br>
 
    <label> My Pets: </label>
    <%= collection_select(:meeting, :requestie_id, @current_user.pets , :id, :name ) %><br><br>
-   
+
    <%# <label> Other Pets: </label> %>
    <%= hidden_field(:meeting, :requester_id, :value => cookies[:last_viewed_pet] ) %>
    <%# collection_select(:meeting, :requester_id, (Pet.all - @current_user.pets), :id, :name ) %><br><br>
