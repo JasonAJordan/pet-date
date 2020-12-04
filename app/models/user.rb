@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :pets
     has_one_attached :picture
+    has_many :pets
 
     has_secure_password 
     
@@ -8,9 +8,8 @@ class User < ApplicationRecord
     validates :name, presence: true 
     validates :bio, presence: true
 
-
-    
     validates :user_name, presence: true 
     validates :user_name, uniqueness: true 
+
 
 end
