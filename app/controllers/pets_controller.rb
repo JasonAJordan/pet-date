@@ -1,6 +1,11 @@
 class PetsController < ApplicationController
 
-  #skip_before_action :authorized, only: [:new, :create ]
+  skip_before_action :authorized, only: [:new, :create ]
+  before_action :user_authorized, only: [:update]
+
+  def user_authorized 
+    redirect_to user_path(cookies[:pet_page]) unless cookies[:user_id] == cookies[:pet_page]
+  end 
 
     def index 
         @pets = Pet.all.with_attached_picture
@@ -49,7 +54,7 @@ class PetsController < ApplicationController
 
     def edit 
       @pet = Pet.find(params[:id])  
-
+      cookies[:pet_page] == @pet.id
     end 
       
     def update 

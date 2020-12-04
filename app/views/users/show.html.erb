@@ -13,6 +13,9 @@
 <ul>
     <% @user.pets.each do |pet| %> 
     <li><%= link_to pet.name, pet_path(pet.id) %> </li>
+    
+    <% variant = pet.picture.variant(resize_to_limit: [300, 300]).processed %>
+    <img src="<%=(url_for(variant))%>">
     <% end %> 
 </ul>
 

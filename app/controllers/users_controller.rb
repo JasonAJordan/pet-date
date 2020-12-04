@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 
   skip_before_action :authorized, only: [:new, :create, :index]
+  before_action :user_authorized, only: [:update]
+
+  def user_authorized 
+    redirect_to user_path(cookies[:edit_page]) unless cookies[:user_id] == cookies[:edit_page]
+  end 
 
     def index 
         @users = User.all.with_attached_picture
@@ -28,16 +33,14 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @pets = @user.pets 
 
-
       # @requestieorder = @pet.requestie_relationships.order('status DESC')
       # @requesterorder = @pet.requested_relationships.order('status DESC')
-
 
     end 
       
     def edit 
       @user = User.find(params[:id])  
-
+      cookies[:edit_page] = @user.id
     end 
       
     def update 
