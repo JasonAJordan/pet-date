@@ -1,5 +1,7 @@
 class LocationsController < ApplicationController
 
+    skip_before_action :authorized, only: [:new, :create, :index]
+
     def index 
         @locations = Location.all 
     end 
