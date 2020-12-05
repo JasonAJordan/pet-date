@@ -1,5 +1,7 @@
 <h1> Date Show Page </h1>
 
+<div class="show-container">
+<div class="show-title">
 <p> <%= @meeting.status %>: 
     <%= @meeting.requester.name %> and 
     <%= @meeting.requestie.name %> at 
@@ -9,32 +11,34 @@
     <%# @meeting.current_date %>
 </p>
 
-
 <p> <%= @meeting.has_passed %> </p>
    
 
 <label> <h3>Your Buddy </h3></label> 
-<% if @meeting.requestie.picture.attached? %>
    
    <% pic = @meeting.requestie.picture  %>
    <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
     <img src="<%=(url_for(variant))%>">
-    <% else %><br>
-        <%= "No Image 😢"%>
-<% end %><br>
+
 
 <label><h3> Their New Buddy</h3> </label> 
-<% if @meeting.requester.picture.attached? %>
    
    <% pic = @meeting.requester.picture %>
    <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
     <img src="<%=(url_for(variant))%>">
-    <% else %><br>
-    <%= "No Image 😢"%>
+
+
+<label><h3> At <%= @meeting.location.name %></h3> </label> 
+<% if @meeting.location.picture.attached? %>
+   <% pic = @meeting.location.picture %>
+   <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
+    <img src="<%=(url_for(variant))%>">
 <% end %>
 
 <h3> <%= link_to "Back to all meetings", meetings_path %> </h3>
-<h3> <%= link_to "Back to User", user_path(@current_user) %> </h3>
-<h3> <%= link_to "Back to Pet", pet_path(@meeting.requestie) %> </h3>
+
 <br> <br>
  <%= button_to "Delete Date", @meeting, :method => :delete %>
+
+</div>
+</div>

@@ -2,11 +2,11 @@
 
 <div class="show-container">
 <div class=show-title>
-   <h2></h2>  <%= @pet.name %> </h2>
+
+   <p>  <%= @pet.name %> </p>
    <p> <%= @pet.bio %> </p>
    <p><b>Age:</b> <%= @pet.age %></p>
    <p><b>Owner:</b> <%= link_to @pet.user.name, user_path(@pet.user) %></p>
-
 
    <% if @pet.picture.attached? %>
       
@@ -22,50 +22,67 @@
 
 <!-- THIS IS THE DATE ACCEPTED/PENDING -->
 
+<div class="new-container">
+
 <% if @current_user.id == @pet.user.id %>
 
-<% if @requestieorder.length > 0 %>
-   <label> Pending Requests: </label>
-   <ul> <% @requestieorder.each do |meeting| %>
+   <% if @requestieorder.length > 0 %> <!-- This is for requests that the other Users approved! -->
+      <label>  Requests Aproved: </label>
+      <ul> <% @requestieorder.each do |meeting| %>
 
-      <% if meeting.status != 'Accepted'%>
-         <li><%= link_to 'Meeting:', meeting_path(meeting) %>
-         <%= meeting.requester.name %> and 
-         <%= meeting.requestie.name %> at 
-         <%= meeting.location.name %>, 
-         <%= meeting.time_nice %> Status = 
-         <%= meeting.status %> 
-         </li>
+         <% if meeting.status != 'Accepted'%>
+            <li><%= link_to 'Meeting:', meeting_path(meeting) %>
+            <%= meeting.requester.name %> and 
+            <%= meeting.requestie.name %> at 
+            <%= meeting.location.name %>, 
+            <%= meeting.time_nice %> Status = 
+            <%= meeting.status %> 
+            </li>
+         <% end %>
+         
       <% end %>
-   
-      <% if meeting.status != "Accepted" %>
+   </ul>
+   <% end %> <br>
+
+<% if @requesterorder.length > 0 %>
+
+   <label> Requests Accepted: </label> <!-- This is for requests that the owner approved! -->
+    <% @requesterorder.each do |meeting| %>
+   <% if meeting.status == 'Accepted'%>
+      <li><%= link_to 'Meeting:', meeting_path(meeting) %>
+      <%= meeting.requester.name %> and 
+      <%= meeting.requestie.name %> at 
+      <%= meeting.location.name %>, 
+      <%= meeting.time_nice %> Status = 
+      <%= meeting.status %> 
+      </li>
+   <% end %>
+   <% end %>
+
+   <br>
+   <label> Requests Received: </label> <!-- This is for requests that are sent to the pet -->
+    <% @requesterorder.each do |meeting| %>
+
+   <% if meeting.status != "Accepted" %>  
+         <li><%= link_to 'Meeting:', meeting_path(meeting) %>
+      <%= meeting.requester.name %> and 
+      <%= meeting.requestie.name %> at 
+      <%= meeting.location.name %>, 
+      <%= meeting.time_nice %> Status = 
+      <%= meeting.status %> 
+      </li>
+
          <%= form_for meeting do |f|%>
             <%= f.hidden_field :status, value: meeting.accept %>
             <%= f.submit "Accept the meeting!" %>
          <% end %>
-      <% end %>   
+       <% end %>   
    <% end %>
-</ul>
-<% end %> <br>
-
-<% if @requesterorder.length > 0 %>
-<label> Accepted Requests: </label>
-<ul> <% @requesterorder.each do |meeting| %>
-  <% if meeting.status == 'Accepted'%>
-   <li><%= link_to 'Meeting:', meeting_path(meeting) %>
-   <%= meeting.requester.name %> and 
-    <%= meeting.requestie.name %> at 
-    <%= meeting.location.name %>, 
-    <%= meeting.time_nice %> Status = 
-    <%= meeting.status %> 
-   </li>
-   <% end %>
-   <% end %>
-</ul>
-<% end %>
 
 <% end %>
+<% end %>
 
+</div>
 
 <!-- THIS IS THE NEW DATE REQUEST PART! -->
 

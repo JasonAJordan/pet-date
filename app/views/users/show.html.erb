@@ -1,3 +1,7 @@
+<br><br>
+
+<div class="new-container">
+
 <h1><%= @user.name %></h1>
 <h3> <%= @user.location %></h3>
 
@@ -9,17 +13,23 @@
 <p> <%= @user.bio %> </p>
 <p> Hobbies: <%= @user.hobbies %> </p>
 <p> Favorite Movie: <%= @user.favorite %> </p>
+</div>
+
 
 <h3>My Pets </h3>
 
-<ul>
+
+        
+  <div class="index-container">
     <% @user.pets.each do |pet| %> 
-    <li><%= link_to pet.name, pet_path(pet.id) %> </li>
+    <div class='index-title'>
+    <%= link_to pet.name, pet_path(pet.id) %> 
     
     <% variant = pet.picture.variant(resize_to_limit: [300, 300]).processed %>
     <img src="<%=(url_for(variant))%>">
+    </div>
     <% end %> 
-</ul>
+  </div>
 
 <%# ------Only the login'd user should see the dates list  ---------%>
 <% if @current_user.id == @user.id %> 

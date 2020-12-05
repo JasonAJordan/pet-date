@@ -1,7 +1,6 @@
-  <br><br>Users:<% @users.each do |user| %>
- <h3><%= link_to user.name, user_path(user) %></h3>
- <% end %>
 
+
+<br>
 
 <div class="home-bio"><h1> Welcome to Pet Playdate </h1>
 
@@ -24,4 +23,12 @@
 
 <p>Founded in December 2020 by two pet lovers, Adam Shilling and Jason Jordan, in New York. </p>
 
+</div>
+
+<!-- DELETE BELOW THIS LINE BEFORE TUESDAY -->
+
+<div class="dev">
+<br><br>Dev LIST OF USERS DELETE BEFORE TUESDAY Users:<% @users.each do |user| %>
+ <h3><%= link_to user.name, user_path(user) %></h3>
+ <% end %>
 </div>

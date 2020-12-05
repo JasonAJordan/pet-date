@@ -170,6 +170,13 @@
 }
 
 
+.new-user { 
+
+  magrin: auto;
+}
+
+
+
 .new-text {
   text-align: 10px;
 }
@@ -242,4 +249,15 @@
 .mail {
   max-width: fit-content;
   float: left;
+}
+
+
+/* ------- DEV CSS -------*/ 
+
+
+.dev {
+  font-size: 32px;
+}
+.dev p {
+  color: crimson
 }
