@@ -22,15 +22,16 @@
 
 <!-- THIS IS THE DATE ACCEPTED/PENDING -->
 
-<div class="new-container">
+
 
 <% if @current_user.id == @pet.user.id %>
+<div class="new-container">
 
    <% if @requestieorder.length > 0 %> <!-- This is for requests that the other Users approved! -->
       <label>  Requests Aproved: </label>
       <ul> <% @requestieorder.each do |meeting| %>
 
-         <% if meeting.status != 'Accepted'%>
+         <% if meeting.status == 'Accepted'%>
             <li><%= link_to 'Meeting:', meeting_path(meeting) %>
             <%= meeting.requester.name %> and 
             <%= meeting.requestie.name %> at 
@@ -80,9 +81,10 @@
    <% end %>
 
 <% end %>
+</div>
 <% end %>
 
-</div>
+
 
 <!-- THIS IS THE NEW DATE REQUEST PART! -->
 

@@ -1,3 +1,4 @@
+<br>
 <% @receipts.each do |receipt| %>
     <% message = receipt.message %>
     <div class="media">
@@ -6,11 +7,12 @@
         <a href="#">
            <!-- <img class="media-object" src="http://placehold.it/64x64" alt="..."> --->
           
-               <% if @current_user.picture.attached? %>
+          <% if message.sender.picture.attached? %>
    
-          <% variant = @current_user.picture.variant(resize_to_limit: [100, 100]).processed %>
+          <% variant = message.sender.picture.variant(resize_to_limit: [100, 100]).processed %>
           <img src="<%=(url_for(variant))%>">
-          <% end %>
+
+        <% end %>
         </a>
       </div>
       <div class="media-body">
@@ -23,3 +25,4 @@
       </div>
     </div>
 <% end %>
+<br>
