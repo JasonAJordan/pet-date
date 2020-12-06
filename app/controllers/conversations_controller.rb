@@ -29,8 +29,9 @@ class ConversationsController < ApplicationController
 
     # @pets = Pet.all 
 
-    # @pet_id_list = @current_user.pets.map {|pet| pet.id }
+
       # ignore what is above  
+      @pet_id_list = @current_user.pets.map {|pet| pet.id }
 
     @meetings = Meeting.all 
     @meetings_2 = @meetings.select do |meeting| 
@@ -46,7 +47,7 @@ class ConversationsController < ApplicationController
       meeting.requestie.user
     end 
 
-    @user_messaging_list = @user_list_1 + @user_list_2
+    @user_messaging_list = @user_list_1 + @user_list_2 + [ @current_user ]
     @user_messaging_list.uniq! {|e| e[:id] }
 
     
