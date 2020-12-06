@@ -22,7 +22,7 @@ Our Pet Playdate is a ruby-on rails project that allows users to set up playdate
 
 ## Project Functions and Overview 
 
-** Banner ** 
+**Banner** 
 
 On this page a User is able to Sign Up / Login on the right of the site banner. Once Signed in a user will have access to the My Pets, View Other Pets, Create A Pet, & Create a date tabs. 
 
@@ -44,8 +44,8 @@ Once Login in a new set of opions will open up on the right of the banner. Welco
 
 - Logout: Logs User out. 
 
-** Pet Dates ** 
+**Pet Dates** 
 
-** Messanging ** 
+**Messanging** 
 
 Once a date has been accepted, the two users can message each other. Only while a date has been accepted can a user message the other pet's Owner. Messaging works simliar to email or form threads where a User can start a topic and then the two users can reply to that topic, leaving in comments. 
