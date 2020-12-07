@@ -65,6 +65,36 @@ For our main functions we have 4 models, Users, Pets, Meetings, & Locations
 The User has many Pets while Pets have many Meetings. Locations belong to a Meeting. Pets can have many to many relation with itself due to meeting having two pets, one being the requester and the other being the requestie. There are other models that were created via gems. Two models for Images via activerecord gem and four models for the messaging system via the mailboxer gem. 
 
 
+## Appliaction Specs: 
+
+**Text Editor** 
+- `VSCode` 
+- `ruby '2.6.1'`
+
+**Gems** 
+
+`gem 'rails', '~> 6.0.3', '>= 6.0.3.4'`
+`gem 'sqlite3', '~> 1.4'`
+`gem 'puma', '~> 4.1'`
+`gem 'sass-rails', '>= 6'`
+`gem 'webpacker', '~> 4.0'`
+`gem 'turbolinks', '~> 5'`
+`gem 'jbuilder', '~> 2.7'`
+`gem 'bcrypt', '~> 3.1.7'`
+`gem 'image_processing', '~> 1.2'`
+`gem 'rmagick' `
+`gem 'bootsnap', '>= 1.4.2', require: false`
+`gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]`
+`gem 'web-console', '>= 3.3.0'`
+`gem 'listen', '~> 3.2'`
+`gem 'spring'`
+`gem 'spring-watcher-listen', '~> 2.0.0'`
+`gem 'capybara', '>= 2.15'`
+`gem 'selenium-webdriver'`
+`gem 'webdrivers'`
+`gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]`
+`gem 'mailboxer'`
+
 
 
 
