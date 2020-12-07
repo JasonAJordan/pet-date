@@ -247,20 +247,81 @@
 }
 
 /*-- Not used --*/
-.navmail {
-  height: 25px;
+.nnav-pills{
+
+  height: 30px;
+  width: 25%;
+  background-color: white;
+}
+
+.mail-banner{
+  /* height: 25px; */
   width: 100%;
-  /* background-image: url("https://www.muralswallpaper.com/app/uploads/Blue-Bulldog-and-Sausage-Dog-Pattern-Pet-Wallpaper-Mural-Plain-820x532.jpg"); */
   background-color: rgba(255, 255, 255, 1);
   height: 60px;
-  width: 100%;
   margin: 0px auto;
+  max-width: fit-content;
+  margin: auto;
   /* margin-top: 300px;  */
   padding: 0px;
-  /* border-radius: 10px; */
-  /* position: fixed;  */
-  top: 0; 
+  border-radius: 10px;
+  /* top: 100px; */
+  float: left;
+  padding: 10px;
+}
 
+.mail-banner li {
+  display: inline-block;
+  line-height: 30px;
+  line-height: 60px;
+  padding: 0px 10px;
+  margin: 0px;
+  /* margin: auto; */
+  font-family: Arial, Helvetica, sans-serif;
+  border-right:solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.mail-banner li a {
+  text-decoration: none;
+  color: rgb(23, 114, 30);
+  font-size: 18px; 
+  font-weight: 800;
+
+}
+
+.mail-banner li:hover {
+  background-color: rgba(245, 222, 179, 0.5);
+  transition: 1s;
+
+ }
+
+.mail-banner2{
+  background-color: rgba(255, 255, 255, 1);
+  height: 60px;
+  max-width: 16%;
+  max-width: 320px;
+  max-width: auto;
+  margin: auto;
+  padding: 0px;
+  border-radius: 10px;
+  float: left;
+}
+.mail-banner2 li {
+  display: inline-block;
+  line-height: 30px;
+  line-height: 60px;
+  padding: 0px 10px;
+  margin: 0px;
+  /* margin: auto; */
+  font-family: Arial, Helvetica, sans-serif;
+  border-right:solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.mail-banner2 li a {
+  text-decoration: none;
+  color: rgb(23, 114, 30);
+  font-size: 18px; 
+  font-weight: 800;
 
 }
 
@@ -268,7 +329,6 @@
   background-color: rgba(245, 222, 179, 0.5);
   transition: 1s;
  }
-
 
 
 .mail-container{
