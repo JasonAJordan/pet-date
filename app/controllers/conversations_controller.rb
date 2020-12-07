@@ -31,7 +31,7 @@ class ConversationsController < ApplicationController
 
 
       # ignore what is above  
-      @pet_id_list = @current_user.pets.map {|pet| pet.id }
+    @pet_id_list = @current_user.pets.map {|pet| pet.id }
 
     @meetings = Meeting.all 
     @meetings_2 = @meetings.select do |meeting| 

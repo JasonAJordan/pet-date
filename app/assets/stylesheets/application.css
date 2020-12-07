@@ -207,17 +207,20 @@
 }
 
 /*-- Not used --*/
-.nnav-pills{
-
-  height: 30px;
-  width: 25%;
-  background-color: white;
+.navmail {
+  height: 25px;
+  width: 100%;
+  /* background-image: url("https://www.muralswallpaper.com/app/uploads/Blue-Bulldog-and-Sausage-Dog-Pattern-Pet-Wallpaper-Mural-Plain-820x532.jpg"); */
+  background-color: rgba(255, 255, 255, 1);
   height: 60px;
+  width: 100%;
   margin: 0px auto;
+  /* margin-top: 300px;  */
   padding: 0px;
-  border-radius: 10px;
-  float: left;
-  padding: 10px;
+  /* border-radius: 10px; */
+  /* position: fixed;  */
+  top: 0; 
+
 
 }
 
@@ -280,9 +283,21 @@
   transition: 1s;
 }
 
-.mail {
+.mail-banner {
   max-width: fit-content;
   float: left;
+  height: 25px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  height: 60px;
+  width: 100%;
+  margin: 0px auto;
+  /* margin-top: 300px;  */
+  padding: 0px;
+  border: px solid black;
+  /* border-radius: 10px; */
+  /* position: fixed;  */
+ 
 }
 
 
