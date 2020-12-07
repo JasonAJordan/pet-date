@@ -1,4 +1,5 @@
-<br><br><br><br><br>
+<%= render 'shared/logobanner' %>
+    
 <div class="show-container">
 <div class="show-title">
 
@@ -8,13 +9,21 @@
       <%= f.text_field :user_name %>
       <p></p>
       <%= f.label :password %>
-      <%= f.text_field :password %>
+      <%= f.password_field :password %>
     <br>
     <br>
-    <%= f.submit  "Login" %> <%= button_to "Sign Up", new_user_path %>
-<%# "Make new Account" %>
-    <% end %>
+    <%= f.submit  "Login" %> 
+    
 
+    <% end %>
+    <br>
+    <%# <span class="not-a-user" ><%= link_to "Not a user? Sign Up", new_user_path </span> %>
+
+    <%= button_to "Sign Up", new_user_path, :method => :get %>
+
+    <%# <%= button_to(link_to, new_user_path , :get) %> 
+    <%# <%= button_to "Sign Up", new_user_path %>
+    <%# <li class="right"><%= link_to "Sign Up", new_user_path %>
 
 </div>
 </div>

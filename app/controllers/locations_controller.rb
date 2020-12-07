@@ -50,6 +50,6 @@ class LocationsController < ApplicationController
     private
 
     def location_params 
-        params.require(:location).permit(:name, :picture)
+        params.require(:location).permit(:name, :picture, :neighbourhood)
     end
 end

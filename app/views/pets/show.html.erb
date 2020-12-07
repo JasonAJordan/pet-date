@@ -1,17 +1,12 @@
-<   <div class="logo-banner">
-    <%# <img src="https://i.pinimg.com/originals/30/7d/4d/307d4d03ef660e147a9d79637d11ee28.jpg"> %>
-
-    <h1><img src="https://www.freelogodesign.org/file/app/client/thumb/3fbf174c-c555-4d1c-b145-f1099de24191_200x200.png?1607351240389"> </h1>
-    <h3> Why Should Your Pet's Only Bestfriend be You? </h3>
-    </div>
+<%= render 'shared/logobanner' %>
 
 <div class="show-container">
 <div class=show-title>
 
    <p>  <%= @pet.name %> </p>
    <p> <%= @pet.bio %> </p>
-   <p><b>Age:</b> <%= @pet.age %></p>
-   <p><b>Owner:</b> <%= link_to @pet.user.name, user_path(@pet.user) %></p>
+   <p><b>Age:</b> <%= @pet.age %> </p>
+   <p><b>Owner:</b> <%= link_to @pet.user.name, user_path(@pet.user) %> </p>
 
    <% if @pet.picture.attached? %>
       
@@ -19,6 +14,10 @@
       <img src="<%=(url_for(variant))%>">
 
    <% end %>
+  <p><b> Neighbourhood: </b> <%= @pet.user.neighbourhood %></p>
+   <p><b> Likes: </b> <%= @pet.likes %></p>
+   <p><b> Dislikes: </b> <%= @pet.dislikes %></p>
+
 </div>
 </div>
 
@@ -93,11 +92,16 @@
 
 <!-- THIS IS THE NEW DATE REQUEST PART! -->
 
-<br><br><br>
+<br><br>
 
 
 <% if @pet.user.id != @current_user.id %>
+<div class="arrange-date-container">
+<h3> To set up a playdate between your pet and <%="#{@pet.name}"%>, please request below and you can start chatting! </h3>
+</div> 
+<br>
 <div class="new-container">
+
    <%= form_tag meetings_path do %>
 
    <label> Time: </label>
@@ -109,11 +113,17 @@
 
    <%# <label> Other Pets: </label> %>
    <%= hidden_field(:meeting, :requester_id, :value => cookies[:last_viewed_pet] ) %>
-   <%# collection_select(:meeting, :requester_id, (Pet.all - @current_user.pets), :id, :name ) %><br><br>
+   <%# collection_select(:meeting, :requester_id, (Pet.all - @current_user.pets), :id, :name ) %>
    <%= hidden_field(:meeting, :status, :value => 'Requested' ) %>
 
-   <label> Place: </label>
+   <label> Location: </label>
    <%= collection_select(:meeting, :location_id, @locations, :id, :name ) %><br><br>
+
+   <label class="new-location"> <%= link_to "Create New Location", new_location_path %>
+
+
+   <br><br>
+
 
    <%= submit_tag "Make Request"%>
    <% end %>

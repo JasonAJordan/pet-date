@@ -4,7 +4,9 @@ class PetsController < ApplicationController
   before_action :user_authorized, only: [:update]
 
   def user_authorized 
-    redirect_to user_path(cookies[:pet_page]) unless cookies[:user_id] == cookies[:pet_page]
+    @pet = Pet.find(params[:id])
+    redirect_to user_path(@current_user.id) unless @current_user.id == @pet.user.id
+    # redirect_to user_path(@current_user.id) unless cookies[:user_id] == cookies[:pet_page]
   end 
 
     def index 

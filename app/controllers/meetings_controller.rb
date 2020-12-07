@@ -4,6 +4,28 @@ class MeetingsController < ApplicationController
 
     def index 
         @meetings = Meeting.all.order('status DESC')
+
+
+        @pet_id_list = @current_user.pets.map {|pet| pet.id }
+
+        @meetings_2 = @meetings.select do |meeting| 
+                   (meeting.status == "Accepted") && (@pet_id_list.include?(meeting.requester_id)) || 
+                   (meeting.status == "Accepted") && (@pet_id_list.include?(meeting.requestie_id))
+                   
+        end 
+    
+        @user_list_1 = @meetings_2.map do |meeting| 
+          meeting.requester.user
+        end 
+        @user_list_2 = @meetings_2.map do |meeting| 
+          meeting.requestie.user
+        end 
+    
+        @user_messaging_list = @user_list_1 + @user_list_2 #+ [ @current_user ]
+        @user_messaging_list.uniq! {|e| e[:id] }
+    
+
+
     end 
 
     def show 

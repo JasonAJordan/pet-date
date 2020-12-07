@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_161145) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
+    t.string "neighbourhood"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -119,7 +120,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_161145) do
     t.string "name"
     t.string "bio"
     t.string "user_name"
-    t.string "location"
+    t.string "neighbourhood"
     t.string "hobbies"
     t.string "favorite"
     t.string "email"

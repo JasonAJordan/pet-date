@@ -50,8 +50,12 @@
 .logo-banner {
   margin-top: 60px; 
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://www.muralswallpaper.com/app/uploads/Blue-Bulldog-and-Sausage-Dog-Pattern-Pet-Wallpaper-Mural-Plain-820x532.jpg); */
-  border-bottom: 5px, solid rgb(255, 252, 252);
+  border-bottom: 0.5px solid white;
+  background: linear-gradient(to top, rgba(0, 255, 255, 1), rgb(245, 222, 179, 0.5));
+
 }
+
+
 
 
 .nav {
@@ -165,12 +169,13 @@
 } 
 
 .index-title {
-  background-color: rgba(115, 213, 243, 0.521);
+  /* background-color: rgba(115, 213, 243, 0.521); */
+  background: linear-gradient(to top, rgba(0, 255, 255, 1), rgb(245, 222, 179,0.5));
   text-align: center;
   padding: 50px; 
   margin: 10px; 
-  border-radius: 15px;  */
-  /* /* border: 2px solid black; */
+  border-radius: 15px; 
+   border: 2px solid white; 
 }
 
 
@@ -183,6 +188,22 @@
 
 .image-rounded { 
   border-radius: 40%;
+}
+
+.index-nopets{
+  /* background-color: rgba(115, 213, 243, 0.521); */
+  background: linear-gradient(to top, cyan, wheat);
+
+  padding: 20px; 
+  border-radius: 15px;
+  
+  /* overflow: scroll;  */
+  margin: auto;
+  text-align: center;
+  padding: 15px; 
+  justify-content: space-evenly; 
+  max-width: fit-content;
+  
 }
 
 /*--------------------------- Show Page ---------------------------*/
@@ -198,12 +219,13 @@
 
 } 
 .show-title {
-  background-color: rgba(115, 213, 243, 0.521);
+  /* background-color: rgba(115, 213, 243, 0.521); */
+  background: linear-gradient(to top, cyan, wheat);
   text-align: center;
   padding: 35px; 
   margin: 10px; 
   border-radius: 15px; 
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
 } 
 
 /*-----------New Page CSS ------------------*/ 
@@ -211,7 +233,8 @@
 .new-container { 
 
   margin: auto;
-  background-color: rgba(180, 60, 250, 0.151);
+  /* background-color: rgba(115, 213, 243, 0.521); */
+  background: linear-gradient(to top, cyan, wheat);
   text-align: center;
   font-size: 16px; 
   font-family: Arial, sans-serif;

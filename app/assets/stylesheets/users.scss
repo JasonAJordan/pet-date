@@ -36,6 +36,9 @@ label {
 p { 
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    font-size: 1.5em;
+    color: white
+
 
 
 }
@@ -56,14 +59,15 @@ p {
 .home-bio h1 { 
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
+    color: wheat;
     font-size: 40px;
-    font-size: 3em;
-
+    font-size: 4em;
 
 }
+
 .home-bio h3 { 
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    // -webkit-text-stroke-width: 1px;
+    // -webkit-text-stroke-color: black;
     font-size: 2em;
 
 }
@@ -76,18 +80,26 @@ p {
     padding: 0px; 
     width: 730px; 
     margin: auto;
-
-}
-
-.home-about h3{
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
     font-size: 2em;
+}
+
+.home-about p { 
+
+    color: white; 
+    font-size: 0.5em;
 
 }
 
-p { 
-    color: white; 
-    font-size: 1.5em;
-
+.delete-button {
+    background-image: linear-gradient(to bottom, #5cc1f0, #97a2a8);
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;  -webkit-box-shadow: 6px 5px 24px #666666;  -moz-box-shadow: 6px 5px 24px #666666;  box-shadow: 6px 5px 24px #666666;
+    font-family: Arial;  color: #fafafa;  font-size: 27px;  padding: 19px;  text-decoration: none;
+    max-width: fit-content;
+    justify-content: space-evenly; 
+    margin: auto;
+}
+.center {
+    text-align: center;
+ 
 }

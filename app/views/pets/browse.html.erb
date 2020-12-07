@@ -1,9 +1,4 @@
-   <div class="logo-banner">
-    <%# <img src="https://i.pinimg.com/originals/30/7d/4d/307d4d03ef660e147a9d79637d11ee28.jpg"> %>
-
-    <h1><img src="https://www.freelogodesign.org/file/app/client/thumb/3fbf174c-c555-4d1c-b145-f1099de24191_200x200.png?1607351240389"> </h1>
-    <h3> Why Should Your Pet's Only Bestfriend be You? </h3>
-    </div>
+<%= render 'shared/logobanner' %>
 
 
 <% if @pets == [] %>
@@ -25,7 +20,12 @@
         <% variant = pet.picture.variant(resize_to_limit: [300, 300]).processed %>
         <img src="<%=(url_for(variant))%>">
         <br>
+        <div class="cat-info">
         <%= link_to "Owner: #{pet.user.name}", user_path(pet.user) %>
+        Neighbourhood: <%= "#{@pet.user.neighbourhood}"%>
+        Likes: <%= "#{@pet.likes}" %>
+        Dislikes: <%= "#{@pet.dislikes}" %>
+        </div>
         </div>
         
     <% end %>

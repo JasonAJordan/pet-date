@@ -1,9 +1,11 @@
-<br><br><br><br><br>
 
+<%= render 'shared/logobanner' %>
+
+<br>
 <div class="new-container">
 
 <h1><%= @user.name %></h1>
-<h3> <%= @user.location %></h3>
+<h3> <%= @user.neighbourhood %></h3>
 
  <% if @user.picture.attached? %>
    
@@ -61,4 +63,11 @@
   </ul>
 </div>
   <% end %>
+
+<br>
+<div class ="center">
+<div class = "delete-button">
+  <%= button_to "Delete User", @user, :method => :delete %>
+</button></div>
+</div>
 

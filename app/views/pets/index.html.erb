@@ -1,14 +1,11 @@
-   <div class="logo-banner">
-    <%# <img src="https://i.pinimg.com/originals/30/7d/4d/307d4d03ef660e147a9d79637d11ee28.jpg"> %>
+<%= render 'shared/logobanner' %>
+<br>
 
-    <h1><img src="https://www.freelogodesign.org/file/app/client/thumb/3fbf174c-c555-4d1c-b145-f1099de24191_200x200.png?1607351240389"> </h1>
-    <h3> Why Should Your Pet's Only Bestfriend be You? </h3>
-    </div>
-    
  <%  if @pets.get_user_pets(@current_user).count == 0 %>
-
+    <div class="index-nopets">
     <div class="no-pets"><%= "You haven't uploaded any of your pets yet."%><br><br> 
     Please <%= link_to "click here", new_pet_path %> to upload.</div>
+    </div>
 <% else %>
 
 <div class='index-container'>
