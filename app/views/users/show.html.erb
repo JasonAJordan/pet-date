@@ -1,4 +1,4 @@
-<br><br>
+<br><br><br><br><br>
 
 <div class="new-container">
 
@@ -15,9 +15,9 @@
 <p> Favorite Movie: <%= @user.favorite %> </p>
 </div>
 
-
+<br>
+<div class="new-container">
 <h3>My Pets </h3>
-
 
         
   <div class="index-container">
@@ -30,9 +30,11 @@
     </div>
     <% end %> 
   </div>
+</div>
 
 <%# ------Only the login'd user should see the dates list  ---------%>
 <% if @current_user.id == @user.id %> 
+<br>
 <div class="new-container">
       <h3> Playdates </h3>
 

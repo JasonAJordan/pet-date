@@ -13,19 +13,19 @@ img {
 
 h1 { 
     font-family: Arial, Helvetica, sans-serif;
-    color: wheat;
+    color: white;
     text-align: center;
 }
 h2 { 
     font-family: Arial, Helvetica, sans-serif;
-    color: wheat;
+    color: white;
     text-align: center;
 
 }
 
 h3 { 
     font-family: Arial, Helvetica, sans-serif;
-    color: wheat;
+    color: white;
     text-align: center;
 
 }
@@ -41,15 +41,15 @@ p {
 }
 
 .home-bio { 
-    background-color: rgba(255, 255, 255, 1);
+    // background-color: rgba(255, 255, 255, 1);
     color: black; 
     border-radius: 10px;
     padding: 10px; 
     width: 800px; 
     margin: auto;
-    border-style: ridge;
-    border-width: thick;
-    border-color: grey;
+    // border-style: ridge;
+    // border-width: thick;
+    // border-color: grey;
 
 }
 
@@ -57,16 +57,21 @@ p {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     font-size: 40px;
+    font-size: 3em;
+
+
 }
 .home-bio h3 { 
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    font-size: 2em;
+
 }
 
 .home-about{
 
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black; 
+    // background-color: rgba(255, 255, 255, 0.8);
+    color: white; 
     border-radius: 10px;
     padding: 0px; 
     width: 730px; 
@@ -77,4 +82,12 @@ p {
 .home-about h3{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    font-size: 2em;
+
+}
+
+p { 
+    color: white; 
+    font-size: 1.5em;
+
 }
