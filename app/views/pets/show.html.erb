@@ -130,6 +130,13 @@
    </div>
 <% end %>
 
+<!-- Delete PET button -->
+<% if @current_user.id == @pet.user.id  %>  
+<div class="center">
+ <%= button_to "Delete Pet :(", @meeting, :method => :delete %>
+</div>
+<% end %> 
+
 
 <br><br><br><br>
 

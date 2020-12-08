@@ -1,5 +1,5 @@
 
-<%= render 'shared/logobanner' %>
+<div class="form-for"><%= render 'shared/logobanner' %></div>
 
 <br>
 <div class="new-container">
@@ -65,9 +65,12 @@
   <% end %>
 
 <br>
-<div class ="center">
+<% if @current_user.id == @user.id  %>  
+
+
+<div class ="center"></div>
 <div class = "delete-button">
   <%= button_to "Delete User", @user, :method => :delete %>
 </button></div>
 </div>
-
+<% end %> 

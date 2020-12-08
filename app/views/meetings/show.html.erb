@@ -41,7 +41,8 @@
 <h3> <%= link_to "Back to all meetings", meetings_path %> </h3>
 
 <br> <br>
+ <% if @current_user.id == @meeting.requester.user.id  || @meeting.requestie.user.id %>  
  <%= button_to "Delete Date", @meeting, :method => :delete %>
-
+<% end %> 
 </div>
 </div>

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_one_attached :picture
-    has_many :pets
+    has_many :pets, dependent: :destroy
 
     acts_as_messageable
 

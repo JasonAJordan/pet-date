@@ -1,22 +1,15 @@
-<br>
 <%= form_for :conversation, url: :conversations, html: { class: "" } do |f| %>
     <div class="form-group">
       <%= f.label :recipients %>
-      <%# <%= f.select(:recipients, User.all.collect {|p| [ p.name, p.id ] }, {}, { multiple: true , class: "form-control" })%>
-      <%= f.collection_select :recipients, @user_messaging_list , :id, :name, prompt:true %> 
-      
+      <%= f.select(:recipients, @user_messaging_list.collect {|p| [ p.name, p.id ] }, {}, { multiple: true , class: "form-control" })%><br><br>
     </div>
     <div class="form-group">
-      <%= f.label :subject %>
-      <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
+      <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %><br><br>
     </div>
     <div class="form-group">
-      <%= f.label :message %>
-      <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
+      <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %><br><br>
     </div>
 
-    <%= f.submit "Send Message", class: "btn btn-success" %>
+    <%= f.submit "Send Message", class: "btn btn-success" %><br><br>
 
-<% end %>
-<br>
-
+<% end %> 

@@ -156,7 +156,10 @@
 
  /*----------------- Form_for CSS  ----------------*/
 
+.form-for {     
+  font-family: 'Fredoka One', cursive;
 
+}
 
 /*----------------- Index CSS  ----------------*/
 
@@ -170,8 +173,15 @@
   justify-content: space-evenly; 
   /* flex-grow: 1; */
   /* max-width: 25%  */
+
   
 } 
+
+.index-container h3 { 
+    font-family: 'Fredoka One', cursive;
+        color: white;
+    text-align: center;
+}
 
 .index-title {
   /* background-color: rgba(115, 213, 243, 0.521); */
@@ -181,14 +191,19 @@
   margin: 10px; 
   border-radius: 15px; 
   border: 2px solid white; 
+  color: white; 
 }
 
 
 .index-title a {
-    font-family: Arial, Helvetica, sans-serif;
     color: white; 
     text-decoration: none;
-    font-size: 30px;
+    /* font-family: 'Fredoka One', cursive; */
+
+}
+
+.index-title p { 
+  color: white; 
 }
 
 .image-rounded { 
@@ -266,21 +281,6 @@
 
 /*------------------------ Mail CSS ------------------*/ 
 
-/*-- Not used --*/
-.col-md-12{
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px; 
-  float: right;
-}
-
-/*-- Not used --*/
-.nnav-pills{
-
-  height: 30px;
-  width: 25%;
-  background-color: white;
-}
 
 .mail-banner{
   /* height: 25px; */
@@ -304,7 +304,6 @@
   line-height: 60px;
   padding: 0px 10px;
   margin: 0px;
-  /* margin: auto; */
   font-family: Arial, Helvetica, sans-serif;
   border-right:solid 1px rgba(0, 0, 0, 0.1);
 }
@@ -320,6 +319,7 @@
 .mail-banner li:hover {
   background-color: rgba(245, 222, 179, 0.5);
   transition: 1s;
+  border-radius: 10px; 
 
  }
 
@@ -333,6 +333,8 @@
   padding: 0px;
   border-radius: 10px;
   float: left;
+  
+
 }
 .mail-banner2 li {
   display: inline-block;
@@ -340,12 +342,13 @@
   line-height: 60px;
   padding: 0px 10px;
   margin: 0px;
-  /* margin: auto; */
+  
   font-family: Arial, Helvetica, sans-serif;
   border-right:solid 1px rgba(0, 0, 0, 0.1);
+
 }
 
-.mail-banner2 li a {
+.mail-banner2 li span {
   text-decoration: none;
   color: rgb(23, 114, 30);
   font-size: 18px; 
@@ -356,6 +359,7 @@
 .mail-banner2 li:hover {
   background-color: rgba(245, 222, 179, 0.5);
   transition: 1s;
+  border-radius: 10px;
  }
 
 
@@ -368,7 +372,7 @@
   font-family: Arial, sans-serif;
   max-width: 80%;
   border-radius: 10px;
-  padding: 0px 0px 0px 0px;
+  padding: 20px 20px 0px 0px;
 
   border: 2px solid black;
 
@@ -377,7 +381,7 @@
 .message-container{
 
   margin: auto;
-  /*-- background-color: rgba(180, 60, 250, 0.384); --*/
+  
   text-align: 10px;
   font-size: 16px; 
   font-family: Arial, sans-serif;

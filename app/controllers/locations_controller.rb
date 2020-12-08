@@ -24,7 +24,7 @@ class LocationsController < ApplicationController
 
         if location.valid?
         #   redirect_to location_path(location)
-          redirect_to browse_path
+          redirect_to locatioon_path(location)
         else
           flash[:errors] = location.errors.full_messages
           redirect_to new_location_path

@@ -1,8 +1,8 @@
 class Pet < ApplicationRecord
-    has_many :requested_relationships, class_name: "Meeting", foreign_key: :requester_id, dependent: :destroy 
+    has_many :requested_relationships, class_name: "Meeting", foreign_key: :requester_id
     has_many :requesteds, through: :requested_relationships, source: :requested
     
-    has_many :requestie_relationships, class_name: "Meeting", foreign_key: :requestie_id, dependent: :destroy 
+    has_many :requestie_relationships, class_name: "Meeting", foreign_key: :requestie_id
     has_many :requesties, through: :requestie_relationships, source: :requestie 
 
     has_one_attached :picture

@@ -38,7 +38,7 @@ class ConversationsController < ApplicationController
                (meeting.status == "Accepted") && (@pet_id_list.include?(meeting.requester_id)) || 
                (meeting.status == "Accepted") && (@pet_id_list.include?(meeting.requestie_id))
                
-    end 
+     end 
 
     @user_list_1 = @meetings_2.map do |meeting| 
       meeting.requester.user

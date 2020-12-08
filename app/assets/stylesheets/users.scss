@@ -12,7 +12,8 @@ img {
 }
 
 h1 { 
-    font-family: 'Fredoka One', cursive;    color: white;
+    font-family: 'Fredoka One', cursive; 
+       color: white;
     text-align: center;
 }
 h2 { 
@@ -52,6 +53,8 @@ p {
     // border-style: ridge;
     // border-width: thick;
     // border-color: grey;
+    font-family: 'Fredoka One', cursive; 
+
 
 }
 
@@ -61,6 +64,8 @@ p {
     color: wheat;
     font-size: 40px;
     font-size: 4em;
+    font-family: 'Fredoka One', cursive; 
+
 
 }
 
@@ -68,6 +73,7 @@ p {
     // -webkit-text-stroke-width: 1px;
     // -webkit-text-stroke-color: black;
     font-size: 2em;
+    color: wheat;
 
 }
 
@@ -80,6 +86,7 @@ p {
     width: 730px; 
     margin: auto;
     font-size: 2em;
+
 }
 
 .home-about p { 
@@ -89,6 +96,10 @@ p {
 
 }
 
+span { 
+    color: wheat;
+
+}
 .delete-button {
     background: linear-gradient(to top, cyan, wheat);
     border-radius: 28px;

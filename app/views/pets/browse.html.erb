@@ -16,15 +16,15 @@
 
     <% @pets.each do |pet| %>
         <div class='index-title'>
-        <p><%= link_to pet.name, pet_path(pet) %></p>
-        <% variant = pet.picture.variant(resize_to_limit: [300, 300]).processed %>
+        <h1><%= link_to pet.name, pet_path(pet) %></h1>
+        <span><%= pet.user.neighbourhood%> </span>
+         <% variant = pet.picture.variant(resize_to_limit: [300, 300]).processed %> 
         <img src="<%=(url_for(variant))%>">
         <br>
         <div class="cat-info">
-        <%= link_to "Owner: #{pet.user.name}", user_path(pet.user) %><br><br>
-        Neighbourhood: <%= "#{pet.user.neighbourhood}"%><br>
-        Likes: <%= "#{pet.likes}" %><br>
-        Dislikes: <%= "#{pet.dislikes}" %>
+        <span>Owner:</span> <%= link_to "#{pet.user.name}", user_path(pet.user) %><br><br>
+        <span>Likes:</span> <%= "#{pet.likes}" %><br>
+        <span>Dislikes:</span> <%= "#{pet.dislikes}" %>
         </div>
         </div>
         

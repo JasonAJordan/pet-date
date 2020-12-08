@@ -13,16 +13,19 @@
 
     <% if pet.user_id == @current_user.id %>
         <div class='index-title'>
-        <p> <%= link_to pet.name, pet_path(pet) %></p>
-
+        <h3><%= link_to pet.name, pet_path(pet) %></h3>
+        <p><%= pet.user.neighbourhood%></p>
         <% if pet.picture.attached? %>
    
             <% pic = pet.picture %>
             <% variant = pic.variant(resize_to_limit: [300, 300]).processed %>
             <img src="<%=(url_for(variant))%>">
+
         <% else %><br>
             <%= "No Image 😢"%>
             <% end %>
+   <p><span> Likes: </span> <%= pet.likes %></p>
+   <p><span> Dislikes: </span> <%= pet.dislikes %></p>
         </div>
     <% end %>
 <% end %>
