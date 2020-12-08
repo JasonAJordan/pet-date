@@ -21,10 +21,10 @@
         <img src="<%=(url_for(variant))%>">
         <br>
         <div class="cat-info">
-        <%= link_to "Owner: #{pet.user.name}", user_path(pet.user) %>
-        Neighbourhood: <%= "#{@pet.user.neighbourhood}"%>
-        Likes: <%= "#{@pet.likes}" %>
-        Dislikes: <%= "#{@pet.dislikes}" %>
+        <%= link_to "Owner: #{pet.user.name}", user_path(pet.user) %><br><br>
+        Neighbourhood: <%= "#{pet.user.neighbourhood}"%><br>
+        Likes: <%= "#{pet.likes}" %><br>
+        Dislikes: <%= "#{pet.dislikes}" %>
         </div>
         </div>
         

@@ -23,7 +23,8 @@ class LocationsController < ApplicationController
         location.picture.attach(params[:location][:picture])
 
         if location.valid?
-          redirect_to location_path(location)
+        #   redirect_to location_path(location)
+          redirect_to browse_path
         else
           flash[:errors] = location.errors.full_messages
           redirect_to new_location_path

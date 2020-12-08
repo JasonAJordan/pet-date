@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/sessions/new", to: 'sessions#new', as: 'new_login' 
   post "/sessions/new", to: 'users#new', as: 'signup' 
   post '/sessions/login', to: 'sessions#login', as: 'login'
-  get "browse" , to: "pets#browse"
+  get "browse" , to: "pets#browse", as: 'browse'
   
 
   #mailbox 
