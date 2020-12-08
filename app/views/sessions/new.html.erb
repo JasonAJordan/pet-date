@@ -1,15 +1,14 @@
 <%= render 'shared/logobanner' %>
     
-<div class="show-container">
-<div class="show-title">
+<div class="all-new-container">
 
   <%= form_for :session, url: login_path do |f| %>
 
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name %>
+      <div class="all-new-label"><%= f.label "Username" %><br>
+      <%= f.text_field :user_name %></div>
       <p></p>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <div class="all-new-label"><%= f.label :password %><br>
+      <%= f.password_field :password %></div>
     <br>
     <br>
     <%= f.submit  "Login" %> 
@@ -26,6 +25,6 @@
     <%# <li class="right"><%= link_to "Sign Up", new_user_path %>
 
 </div>
-</div>
+
 
 <br><br><br><br>
