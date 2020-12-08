@@ -1,14 +1,16 @@
 <%= render 'shared/errors' %>
 
+<div class="all-new-container">
 <%= form_for @location do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br><br>
+  <div class="all-new-label"><%= f.label :name %><br>
+  <%= f.text_field :name %></div>
 
-  <%= f.label :neighbourhood %>
-  <%= f.text_field :neighbourhood %><br><br>
+  <div class="all-new-label"><%= f.label :neighbourhood %><br>
+  <%= f.text_field :neighbourhood %></div>
   
-  <%= f.label "Location Photo" %>
-  <%= f.file_field :picture %><br><br>
+  <div class="all-new-label"><%= f.label "Location Photo" %><br>
+  <%= f.file_field :picture %></div>
 
-  <%= f.submit %>
+  <button><%= f.submit %></button>
 <% end %>
+</div>

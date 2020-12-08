@@ -1,27 +1,27 @@
 <%= render 'shared/errors' %>
 
-<div class="pet-new-container">
+<div class="all-new-container">
 
   <%= form_for @pet do |f| %>
-  <div class="pet-new-label"><%= f.label "Pet's Name" %><br>
+  <div class="all-new-label"><%= f.label "Pet's Name" %><br>
   <%= f.text_field :name %></div>
 
-  <div class="pet-new-label"><%= f.label "Pet's Bio " %><br>
+  <div class="all-new-label"><%= f.label "Pet's Bio " %><br>
   <%= f.text_field :bio %></div>
 
-  <div class="pet-new-label"><%= f.label "Species:" %><br>
+  <div class="all-new-label"><%= f.label "Species:" %><br>
   <%= f.select :species, [ 'Cat', 'Dog', 'Rabbit', 'Bird', 'Lizard', 'Other' ], :prompt => 'Select One' %></div>
 
-  <div class="pet-new-label"><%= f.label "Age:" %><br>
+  <div class="all-new-label"><%= f.label "Age:" %><br>
   <%= f.select :age, (1..20), :prompt => 'Select Age' %></div>
 
-  <div class="pet-new-label"><%= f.label :likes %><br>
+  <div class="all-new-label"><%= f.label :likes %><br>
   <%= f.text_field :likes %></div>
 
-  <div class="pet-new-label"><%= f.label :dislikes %><br>
+  <div class="all-new-label"><%= f.label :dislikes %><br>
   <%= f.text_field :dislikes %></div>
 
-  <div class="pet-new-label"><%= f.label "Profile Photo" %><br>
+  <div class="all-new-label"><%= f.label "Profile Photo" %><br>
   <%= f.file_field :picture %><br></div>
 
   <%# <%= f.label :user_id 

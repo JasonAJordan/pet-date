@@ -17,7 +17,7 @@
     <% @pets.each do |pet| %>
         <div class='index-title'>
         <h1><%= link_to pet.name, pet_path(pet) %></h1>
-        <span><%= pet.user.neighbourhood%> </span>
+        <span><%= pet.user.neighbourhood%> </span><br>
          <% variant = pet.picture.variant(resize_to_limit: [300, 300]).processed %> 
         <img src="<%=(url_for(variant))%>">
         <br>

@@ -1,22 +1,24 @@
 <%= render 'shared/errors' %>
 
+<div class="all-new-container">
 <%= form_for @meeting do |f| %>
-  <%= f.label :time %>
+   <div class="all-new-label"><%= f.label :time %><br>
   
-  <%= f.datetime_select :time, :default => 0.days.from_now.in_time_zone("America/New_York") %><br><br>
+  <%= f.datetime_select :time, :default => 0.days.from_now.in_time_zone("America/New_York") %>
   <%# <%= f.datetime_select :time, default: {hour: 9, min: 0} %>
   <%# f.datetime_select(:req_sess_start, :start_year => 2010, :ampm => true, :default => 0.days.from_now.in_time_zone(@timezone)) %>
-
-  <%= f.label "My Pets" %>
-  <%= f.collection_select :requestie_id, @requesties, :id, :name  %><br><br>
+</div>
+   <div class="all-new-label"><%= f.label "My Pets" %><br>
+  <%= f.collection_select :requestie_id, @requesties, :id, :name  %></div>
   
-  <%= f.label "Other Pets" %>
-  <%= f.collection_select :requester_id, @requesteds, :id, :name  %><br><br>
+   <div class="all-new-label"><%= f.label "Other Pets" %><br>
+  <%= f.collection_select :requester_id, @requesteds, :id, :name  %></div>
 
-  <%= f.label :location_id %>
-  <%= f.collection_select :location_id, @locations, :id, :name  %><br><br>
+   <div class="all-new-label"><%= f.label :location_id %><br>
+  <%= f.collection_select :location_id, @locations, :id, :name  %></div>
 
   <%= f.hidden_field :status, value: 'Requested'  %> 
 
-  <%= f.submit %>
+ <button> <%= f.submit %></button>
 <% end %>
+</div>

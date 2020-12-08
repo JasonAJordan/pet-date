@@ -190,7 +190,7 @@
   padding: 20px; 
   margin: 10px; 
   border-radius: 15px; 
-  border: 2px solid white; 
+  border: 1px solid white; 
   color: white; 
 }
 
@@ -227,13 +227,13 @@
 }
 /*--------------------------- Pet New Form  ---------------------------*/
 
-.pet-new-title {
+.all-new-title {
   color: wheat;
 }
-.pet-new-container, :before, :after { 
-  width:200px;
-  padding:20px;
-  /* border: 2px solid #eee; */
+.all-new-container, :before, :after { 
+  width:300px;
+  padding:40px;
+  border: 1px solid wheat;
   border-radius:10px; 
   font-family: 'Fredoka One', cursive;
 text-align: center; 
@@ -244,7 +244,7 @@ margin: auto;
 
 }
 
-.pet-new-label { 
+.all-new-label { 
   padding: 10px; 
   margin:10px 0;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
@@ -287,12 +287,12 @@ button {
 } 
 .show-title {
   /* background-color: rgba(115, 213, 243, 0.521); */
-  background: linear-gradient(to top, cyan, wheat);
+  background: linear-gradient(to top, rgba(0, 255, 255, 1), rgb(245, 222, 179,0.5));
   text-align: center;
   padding: 35px; 
   margin: 10px; 
   border-radius: 15px; 
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
 } 
 
 /*-----------New Page CSS ------------------*/ 
@@ -301,7 +301,7 @@ button {
 
   margin: auto;
   /* background-color: rgba(115, 213, 243, 0.521); */
-  background: linear-gradient(to top, cyan, wheat);
+  background: linear-gradient(to top, rgba(0, 255, 255, 0.8), rgba(245, 222, 179,0.8));
   text-align: center;
   font-size: 16px; 
   font-family: Arial, sans-serif;
@@ -310,7 +310,7 @@ button {
   padding: 15px 0px 15px 0px;
   /* width: 60%; */
   /* justify-content: center; */
-  border: 2px solid black;
+  /* border: 2px solid black; */
 
 }
 
@@ -413,7 +413,7 @@ button {
 .mail-container{
 
   margin: auto;
-  background: linear-gradient(to top, cyan, wheat);
+  background: linear-gradient(to top, rgba(0, 255, 255, 0.8), rgba(245, 222, 179,0.8));
   text-align: center;
   font-size: 16px; 
   font-family: Arial, sans-serif;
