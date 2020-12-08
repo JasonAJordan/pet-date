@@ -6,9 +6,9 @@
 <div class="show-container">
 <div class="show-title">
 <p> <%= @meeting.status %>: 
-    <%= @meeting.requester.name %> and 
-    <%= @meeting.requestie.name %> at 
-    <%= @meeting.location.name %>: 
+    <%= link_to @meeting.requester.name, pet_path(@meeting.requester.id) %> and 
+    <%= link_to @meeting.requestie.name, pet_path(@meeting.requestie.id) %> at 
+    <%= link_to @meeting.location.name, location_path(@meeting.location.id) %>: 
     <%= @meeting.time_nice %>
     
     <%# @meeting.current_date %>

@@ -1,4 +1,4 @@
-<% if flash[:errors] %>
+<div class="error-messages"><% if flash[:errors] %>
 
   <% if flash[:errors].is_a?(String) %>
     <%= flash[:errors] %>
@@ -10,4 +10,4 @@
   </ul>
   <% end %>
 <% end %>
-
+</div>

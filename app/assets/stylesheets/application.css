@@ -485,6 +485,15 @@ button {
  
 }
 
+/* ------- Error Messages -------*/ 
+
+.error-messages { 
+  font-family: 'Fredoka One', cursive;
+  text-align: center; 
+  color: red; 
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white; 
+}
 
 /* ------- DEV CSS -------*/ 
 

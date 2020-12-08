@@ -36,13 +36,13 @@
       <ul> <% @requestieorder.each do |meeting| %>
 
          <% if meeting.status == 'Accepted'%>
-            <li><%= link_to 'Meeting:', meeting_path(meeting) %>
+            <><%= link_to 'Meeting:', meeting_path(meeting) %>
             <%= meeting.requester.name %> and 
             <%= meeting.requestie.name %> at 
             <%= meeting.location.name %>, 
             <%= meeting.time_nice %> Status = 
             <%= meeting.status %> 
-            </li>
+            </>
          <% end %>
          
       <% end %>
@@ -51,31 +51,29 @@
 
 <% if @requesterorder.length > 0 %>
 
-   <label> Requests Accepted: </label> <!-- This is for requests that the owner approved! -->
+   <label><span>Requests Accepted: </span> </label><br><br> <!-- This is for requests that the owner approved! -->
     <% @requesterorder.each do |meeting| %>
    <% if meeting.status == 'Accepted'%>
-      <li><%= link_to 'Meeting:', meeting_path(meeting) %>
+      <%= link_to 'Meeting:', meeting_path(meeting) %><br><br>
       <%= meeting.requester.name %> and 
-      <%= meeting.requestie.name %> at 
-      <%= meeting.location.name %>, 
-      <%= meeting.time_nice %> Status = 
-      <%= meeting.status %> 
-      </li>
+      <%= link_to meeting.requestie.name, pet_path(meeting.requestie.id) %> <br>
+      <%= meeting.location.name %> <br>
+      <%= meeting.time_nice %> <br>
+      <%= meeting.status %> <br><br>
    <% end %>
    <% end %>
 
-   <br>
-   <label> Requests Received: </label> <!-- This is for requests that are sent to the pet -->
+   <label> <span>Requests Received: </span></label> <br><br><!-- This is for requests that are sent to the pet -->
     <% @requesterorder.each do |meeting| %>
 
    <% if meeting.status != "Accepted" %>  
-         <li><%= link_to 'Meeting:', meeting_path(meeting) %>
+      <%= link_to 'Meeting:', meeting_path(meeting) %><br><br>
       <%= meeting.requester.name %> and 
-      <%= meeting.requestie.name %> at 
-      <%= meeting.location.name %>, 
-      <%= meeting.time_nice %> Status = 
-      <%= meeting.status %> 
-      </li>
+      <%= link_to meeting.requestie.name, pet_path(meeting.requestie.id) %> <br>
+      <%= meeting.location.name %> <br>
+      <%= meeting.time_nice %> <br> 
+      <%= meeting.status %> <br><br>
+      
 
          <%= form_for meeting do |f|%>
             <%= f.hidden_field :status, value: meeting.accept %>
