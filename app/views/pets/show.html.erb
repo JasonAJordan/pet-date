@@ -3,10 +3,10 @@
 <div class="show-container">
 <div class=show-title>
 
-   <p>  <%= @pet.name %> </p>
+   <h1>  <%= @pet.name %> </h1>
    <p> <%= @pet.bio %> </p>
-   <p><b>Age:</b> <%= @pet.age %> </p>
-   <p><b>Owner:</b> <%= link_to @pet.user.name, user_path(@pet.user) %> </p>
+   <p><span>Age:</span> <%= @pet.age %> </p>
+   <p><span>Owner:</span> <%= link_to @pet.user.name, user_path(@pet.user) %> </p>
 
    <% if @pet.picture.attached? %>
       
@@ -14,9 +14,9 @@
       <img src="<%=(url_for(variant))%>">
 
    <% end %>
-  <p><b> Neighbourhood: </b> <%= @pet.user.neighbourhood %></p>
-   <p><b> Likes: </b> <%= @pet.likes %></p>
-   <p><b> Dislikes: </b> <%= @pet.dislikes %></p>
+  <p><span> Neighbourhood: </span> <%= @pet.user.neighbourhood %></p>
+   <p><span> Likes: </span> <%= @pet.likes %></p>
+   <p><span> Dislikes: </span> <%= @pet.dislikes %></p>
 
 </div>
 </div>
