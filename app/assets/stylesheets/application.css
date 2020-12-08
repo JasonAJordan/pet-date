@@ -166,7 +166,7 @@
   /* overflow: scroll;  */
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0px 10px 0px 10px; 
+  padding: 0px 5px 0px 5px; 
   justify-content: space-evenly; 
   /* flex-grow: 1; */
   /* max-width: 25%  */
@@ -177,10 +177,10 @@
   /* background-color: rgba(115, 213, 243, 0.521); */
   background: linear-gradient(to top, rgba(0, 255, 255, 1), rgb(245, 222, 179,0.5));
   text-align: center;
-  padding: 50px; 
+  padding: 20px; 
   margin: 10px; 
   border-radius: 15px; 
-   border: 2px solid white; 
+  border: 2px solid white; 
 }
 
 
