@@ -225,7 +225,54 @@
   max-width: fit-content;
   
 }
+/*--------------------------- Pet New Form  ---------------------------*/
 
+.pet-new-title {
+  color: wheat;
+}
+.pet-new-container, :before, :after { 
+  width:200px;
+  padding:20px;
+  /* border: 2px solid #eee; */
+  border-radius:10px; 
+  font-family: 'Fredoka One', cursive;
+text-align: center; 
+float: center; 
+background: linear-gradient(to top, rgba(0, 255, 255, 0.8), rgba(245, 222, 179,0.8));
+margin: auto;
+
+
+}
+
+.pet-new-label { 
+  padding: 10px; 
+  margin:10px 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius:10px;
+  /* border: 2px solid #eee; */
+  font-family: 'Fredoka One', cursive;
+  color: white; 
+  
+}
+
+button {
+
+  /* remove default behavior */
+  appearance:none;
+  -webkit-appearance:none;
+
+  /* usual styles */
+  padding:10px;
+  border:none;
+  font-weight:600;
+  border-radius:5px;
+  width:100%;
+  opacity: .75;
+  color: blue; 
+  background-color: wheat;
+
+
+}
 /*--------------------------- Show Page ---------------------------*/
 
 .show-container {
